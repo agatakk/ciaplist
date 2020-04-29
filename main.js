@@ -9,7 +9,6 @@ let alertItem;
 function removeAlertItems(){
     if(alertItem){
         let alertAll = document.querySelectorAll('.alert');
-        console.log('cololwiek', alertAll)
         alertAll.forEach((alert, index)=>{
             alert.remove(index);
         });
