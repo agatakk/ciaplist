@@ -7,7 +7,7 @@ body{
     background-color:#F2DEC4;
     font-family: 'Lato', sans-serif;
 }
-
+/* button styles */
 .btn{
     background-color: #593528;
     border:1px solid #593528;
@@ -18,6 +18,7 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
+/* navbar styles */
 .navbar{
     /* position: fixed; */
     display: flex;
@@ -36,6 +37,7 @@ body{
      font-family: 'Lato', sans-serif;
  }
 
+ /* form styles */
  .form{
      border: 1px solid #F2A007;
      display: flex;
@@ -52,6 +54,8 @@ body{
     align-items: center;
     width: 60%
 }
+
+/* input what and how many styles */
  .form__item-input, .form__item-quantity{
      margin: 20px;
      padding: 12px;
@@ -69,11 +73,15 @@ body{
  .form__submit-btn{
      height: 2.5rem;
  }
+
+ /* list styles */
  .form__list-items{
    list-style:none;
-   border: 1px solid #F2A2B1;
+   /* border: 1px solid #F2A2B1; */
    padding-inline-start: 0;
  }
+
+ /* items styles */
  .form__list-item{
      background-color: #F2A007;
      padding: 0.5rem 2rem;
@@ -84,6 +92,8 @@ body{
      font-size: 1rem;
  }
 
+
+ /* items when checked styless */
  label{
      color: #593528;
      padding: .2rem .5rem;
@@ -100,7 +110,7 @@ body{
 
  }
  /* styles added in JS */
- 
+
  .alert{
      margin: 1.5rem;
      color: rgb(197, 48, 48);
@@ -109,4 +119,9 @@ body{
  .input-alert{
      border: 1px solid  rgb(197, 48, 48);
      background-color: rgb(235, 204, 199); }
+
+.li-checked{
+    background-color:#F2DEC4;
+    border: 1px solid  #F2A007;
+}
 
