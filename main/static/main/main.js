@@ -5,6 +5,7 @@ const addBtn = document.querySelector('.form__submit-btn');
 const list = document.querySelector('.form__list-items');
 const formContainer = document.querySelector('.form__alert-messages-container');
 let alertItem;
+console.log('ok');
 
 // FUNCTIONS
 function removeAlertItems(){
@@ -15,12 +16,12 @@ function removeAlertItems(){
         });
     }  
 }
-function addItems(e) {
-    e.preventDefault()
-    let listItem = input.value;
-    let itemQuantity = quantity.value;
-   
-   if(input.value.trim()!=""&&quantity.value.trim()!=""){
+function addItems() {
+    // e.preventDefault()
+    
+    if(input.value.trim()!=""&&quantity.value.trim()!=""){
+        let listItem = input.value;
+        let itemQuantity = quantity.value;
        // deleting alerts on input
        input.classList.remove('input-alert');
        quantity.classList.remove('input-alert');
