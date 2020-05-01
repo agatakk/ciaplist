@@ -16,19 +16,20 @@ function removeAlertItems(){
     }  
 }
 function addItems(e) {
-    e.preventDefault() 
-    if(input.value!=""&&quantity.value!=""){
-        // deleting alerts on input
-        input.classList.remove('input-alert');
-        quantity.classList.remove('input-alert');
-        //creating the <li> elements
-        let listItem = input.value;
-        let itemQuantity = quantity.value;
-        const li = document.createElement('li');
-        li.className = 'form__list-item';
-        li.draggable = 'true';
-        //creating input type=checkbox
-        const checkBox = document.createElement('input');
+    e.preventDefault()
+    let listItem = input.value;
+    let itemQuantity = quantity.value;
+   
+   if(input.value.trim()!=""&&quantity.value.trim()!=""){
+       // deleting alerts on input
+       input.classList.remove('input-alert');
+       quantity.classList.remove('input-alert');
+       //creating the <li> elements
+       const li = document.createElement('li');
+       li.className = 'form__list-item';
+       li.draggable = 'true';
+       //creating input type=checkbox
+       const checkBox = document.createElement('input');
         checkBox.type = 'checkbox';
         checkBox.id = listItem;
         //creating label for input type=checkbox
@@ -55,12 +56,12 @@ function addItems(e) {
         alertItem = document.createElement('p');
         alertItem.className = 'alert';
         //NO ITEM
-        if(input.value=="" && quantity.value!=""){
+        if(input.value.trim()==""&&quantity.value.trim()!=""){
             alertItem.textContent = 'Wpisz proszę CO chcesz kupić.';
             input.classList.add('input-alert');
             quantity.classList.remove('input-alert');
             removeAlertItems()
-        }else if(input.value!="" && quantity.value==""){
+        }else if(input.value.trim()!=""&&quantity.value.trim()==""){
             //NO QUANTITY
             alertItem.textContent = 'Wpisz proszę ILE chcesz kupić.';
             quantity.classList.add('input-alert');
