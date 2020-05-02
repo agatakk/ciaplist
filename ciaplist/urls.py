@@ -22,7 +22,9 @@ from django.views.generic import TemplateView
 from main import views
 urlpatterns = [
     path('nie-admin/', admin.site.urls),
-    path('', views.main, name='main')
+    path('', views.main, name='main'),
+    path('remove_item/<int:item_id>/', views.remove_item, name='remove_item'),
+    path('sync_list/', views.sync_list, name='sync_list')
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

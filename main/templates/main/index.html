@@ -19,21 +19,28 @@
             {{ form }}
             <input type="submit" class="btn" value="Dodaj">
         </div>
+    </form>
         <div class="form__alert-messages-container">
                     
         </div>
-        <ul class="form__list-items">
+        <form action="{% url 'sync_list' %}" method="post">
+            {% csrf_token %}
+        <ul class="form__list-items"> 
             {% for item in items %}
             {% if item.tick == False %}
-            <li class="form__list-item" draggable="true"><input type="checkbox" name="ticker" value="{{ item }}" id="{{ item.item_name }}">
-                <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label></li>
+            <li class="form__list-item" draggable="true"><input type="checkbox" name="ticker" value="{{ item.id }}" id="{{ item.id }}">
+                <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label>
+            </li>
             {% else %}
-            <li class="form__list-item" draggable="true"><input type="checkbox" checked name="ticker" value="{{ item }}" id="{{ item.item_name }}">
-                <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label></li>
+            <li class="form__list-item" draggable="true"><input type="checkbox" checked name="ticker" value="{{ item.id }}" id="{{ item.id }}">
+                <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label>
+            </li>
             {% endif %}
-            {% endfor %}
-        </ul>
-    </form>
+            {% endfor %}       
+                
+                <input type="submit" class="btn" value="Sync"></ul>
+        </form>
+
     <script src="{% static 'main/main.js' %}"></script>
 </body>
 </html>
