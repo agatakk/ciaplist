@@ -124,4 +124,21 @@ body{
     background-color:#F2DEC4;
     border: 1px solid  #F2A007;
 }
+.del{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+}
 
+.del-enter{
+   border: 1px solid black;
+
+}
