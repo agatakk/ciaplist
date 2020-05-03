@@ -51,48 +51,54 @@ function addItems(e) {
         listItems.appendChild(checkBoxLabel);
         
         //dragdrop
-             let del;
-             function dragStart (e) {
-                     console.log('start');
-                     del = document.createElement('div');
-                     del.textContent = 'Usuń';
-                     del.classList.add('del');
-                     document.body.appendChild(del);
-                     const set = e.dataTransfer.setData('Text', e.target.id);
-                 
-             };
-             function dragEnd(){
-                     console.log('end');
-                     del.remove();
-             }
-             function dragEnter (e) {
-                 if(e.target&&e.target.className==='del'){
+        let del;
+        function dragStart (e) {
+            console.log('start');
+            del = document.createElement('div');
+            del.textContent = 'Usuń';
+            del.classList.add('del');
+            document.body.appendChild(del);
+            e.dataTransfer.setData('Text', e.target.id);
+            
+        };
+        function dragEnd(){
+            console.log('end');
+            del.remove();
+        }
+        function dragEnter (e) {
+            if(e.target&&e.target.className==='del'){
                      console.log('enter');
                      e.target.classList.add('del-enter');
-                 }
+                    }
              }
-             function dragOver (e) {
+        function dragOver (e) {
                  if(e.target&&e.target.matches('div.del')){
                      e.preventDefault();
                      console.log('over')
-                 }
+                    }
              }
-             function dropElement (e) {
-                 if(e.target&&e.target.matches('div.del')){
+        function dropElement (e) {
+            if(e.target&&e.target.matches('div.del')){
+                     e.preventDefault();
                      console.log('drop');
-                     let data = e.dataTransfer.getData("Text");
-                     let element = document.getElementById (data);
-                     const deletedELement = element.parentNode.removeChild(element);
-                     console.log(deletedELement);
-                    //  element.remove();
-                 }
-             }
-             // listItems.addEventListener('click', ()=>console.log(item.id))
-             listItems.addEventListener('dragstart', dragStart);
-             listItems.addEventListener('dragend', dragEnd);
-             document.addEventListener('dragenter', dragEnter);
-             document.addEventListener('dragover', dragOver);
-             document.addEventListener('drop', dropElement);
+                     const data = e.dataTransfer.getData("Text");
+                     const element = document.getElementById(data);
+                     console.log(element);
+                     //  element.parentNode.removeChild(element);
+                     element.remove();
+                     console.log(element);
+                    }
+                }
+                
+        const ulItems = document.querySelectorAll('ul>li');
+        console.log(ulItems);
+        ulItems.forEach(item=>item.addEventListener('dragstart', dragStart));
+        ulItems.forEach(item=>item.addEventListener('dragend', dragEnd));
+                // listItems.addEventListener('dragstart', dragStart);
+                // listItems.addEventListener('dragend', dragEnd);
+        document.addEventListener('dragenter', dragEnter);
+        document.addEventListener('dragover', dragOver);
+        window.addEventListener('drop', dropElement);
         input.value='';
         quantity.value = '';
         //styling of <li> :checked
