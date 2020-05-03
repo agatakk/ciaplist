@@ -3,7 +3,6 @@ const input = document.querySelector('.form__item-input');
 const quantity = document.querySelector('.form__item-quantity')
 const addBtn = document.querySelector('.form__submit-btn');
 const list = document.querySelector('.form__list-items');
-
 const formContainer = document.querySelector('.form__alert-messages-container');
 const form = document.querySelector('.form');
 let alertItem;
@@ -29,26 +28,19 @@ function addItems(e) {
         let itemQuantity = quantity.value;
         const li = document.createElement('li');
         li.id = listItem;
-        li.dataset.key=listItem;
-        // li.className = 'form__list-item';
-        // li.draggable = 'true';
-
         // creating input type=checkbox
         const checkBox = document.createElement('input');
         checkBox.type = 'checkbox';
         checkBox.id = listItem;
         //creating label for input type=checkbox
         const checkBoxLabel = document.createElement('label');
-        checkBoxLabel.htmlFor = 'id';
+        checkBoxLabel.htmlFor = listItem;
+        li.dataset.key = checkBoxLabel.htmlFor;
         checkBoxLabel.textContent = `${listItem} [${itemQuantity}]`;
         //appending elements to list
         list.appendChild(li);
-        const listItems = document.querySelector(`li[data-key="${input.value}"]`);
-        console.log(listItems);    
-        listItems.draggable = 'true';
-        listItems.className = 'form__list-item';
-        listItems.appendChild(checkBox);
-        listItems.appendChild(checkBoxLabel);
+        li.appendChild(checkBox);
+        li.appendChild(checkBoxLabel);
         
         //dragdrop
         let del;
@@ -67,35 +59,38 @@ function addItems(e) {
         }
         function dragEnter (e) {
             if(e.target&&e.target.className==='del'){
-                     console.log('enter');
-                     e.target.classList.add('del-enter');
-                    }
-             }
+                console.log('enter');
+                e.target.classList.add('del-enter');
+            }
+        }
         function dragOver (e) {
-                 if(e.target&&e.target.matches('div.del')){
-                     e.preventDefault();
-                     console.log('over')
-                    }
-             }
+            if(e.target&&e.target.matches('div.del')){
+                e.preventDefault();
+                console.log('over')
+            }
+        }
         function dropElement (e) {
             if(e.target&&e.target.matches('div.del')){
-                     e.preventDefault();
-                     console.log('drop');
-                     const data = e.dataTransfer.getData("Text");
-                     const element = document.getElementById(data);
-                     console.log(element);
-                     //  element.parentNode.removeChild(element);
-                     element.remove();
-                     console.log(element);
-                    }
-                }
-                
-        const ulItems = document.querySelectorAll('ul>li');
-        console.log(ulItems);
-        ulItems.forEach(item=>item.addEventListener('dragstart', dragStart));
-        ulItems.forEach(item=>item.addEventListener('dragend', dragEnd));
-                // listItems.addEventListener('dragstart', dragStart);
-                // listItems.addEventListener('dragend', dragEnd);
+                e.preventDefault();
+                console.log('drop');
+                const data = e.dataTransfer.getData("Text");
+                const element = document.getElementById(data);
+                console.log(element);
+                //  element.parentNode.removeChild(element);
+                element.remove();
+                console.log(element);
+            }
+        };
+        const label = document.querySelectorAll('li>label');
+        console.log(label);
+        label.forEach((item)=>{
+            const listItems = document.querySelector(`li[data-key="${item.htmlFor}"]`);
+            console.log(listItems);    
+            listItems.draggable = 'true';
+            listItems.className = 'form__list-item';
+            listItems.addEventListener('dragstart', dragStart);
+            listItems.addEventListener('dragend', dragEnd);
+        });
         document.addEventListener('dragenter', dragEnter);
         document.addEventListener('dragover', dragOver);
         window.addEventListener('drop', dropElement);
