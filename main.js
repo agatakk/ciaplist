@@ -3,6 +3,7 @@ const input = document.querySelector('.form__item-input');
 const quantity = document.querySelector('.form__item-quantity')
 const addBtn = document.querySelector('.form__submit-btn');
 const list = document.querySelector('.form__list-items');
+
 const formContainer = document.querySelector('.form__alert-messages-container');
 const form = document.querySelector('.form');
 let alertItem;
@@ -18,6 +19,7 @@ function removeAlertItems(){
 }
 function addItems(e) {
     e.preventDefault();
+    
     if(input.value.trim()!=""&&quantity.value.trim()!=""){
         // deleting alerts on input
         input.classList.remove('input-alert');
@@ -26,10 +28,12 @@ function addItems(e) {
         let listItem = input.value;
         let itemQuantity = quantity.value;
         const li = document.createElement('li');
-        li.className = 'form__list-item';
-        li.draggable = 'true';
         li.id = listItem;
-        //creating input type=checkbox
+        li.dataset.key=listItem;
+        // li.className = 'form__list-item';
+        // li.draggable = 'true';
+
+        // creating input type=checkbox
         const checkBox = document.createElement('input');
         checkBox.type = 'checkbox';
         checkBox.id = listItem;
@@ -39,60 +43,67 @@ function addItems(e) {
         checkBoxLabel.textContent = `${listItem} [${itemQuantity}]`;
         //appending elements to list
         list.appendChild(li);
-        li.appendChild(checkBox);
-        li.appendChild(checkBoxLabel);
+        const listItems = document.querySelector(`li[data-key="${input.value}"]`);
+        console.log(listItems);    
+        listItems.draggable = 'true';
+        listItems.className = 'form__list-item';
+        listItems.appendChild(checkBox);
+        listItems.appendChild(checkBoxLabel);
+        
+        //dragdrop
+             let del;
+             function dragStart (e) {
+                     console.log('start');
+                     del = document.createElement('div');
+                     del.textContent = 'Usuń';
+                     del.classList.add('del');
+                     document.body.appendChild(del);
+                     const set = e.dataTransfer.setData('Text', e.target.id);
+                 
+             };
+             function dragEnd(){
+                     console.log('end');
+                     del.remove();
+             }
+             function dragEnter (e) {
+                 if(e.target&&e.target.className==='del'){
+                     console.log('enter');
+                     e.target.classList.add('del-enter');
+                 }
+             }
+             function dragOver (e) {
+                 if(e.target&&e.target.matches('div.del')){
+                     e.preventDefault();
+                     console.log('over')
+                 }
+             }
+             function dropElement (e) {
+                 if(e.target&&e.target.matches('div.del')){
+                     console.log('drop');
+                     let data = e.dataTransfer.getData("Text");
+                     let element = document.getElementById (data);
+                     const deletedELement = element.parentNode.removeChild(element);
+                     console.log(deletedELement);
+                    //  element.remove();
+                 }
+             }
+             // listItems.addEventListener('click', ()=>console.log(item.id))
+             listItems.addEventListener('dragstart', dragStart);
+             listItems.addEventListener('dragend', dragEnd);
+             document.addEventListener('dragenter', dragEnter);
+             document.addEventListener('dragover', dragOver);
+             document.addEventListener('drop', dropElement);
         input.value='';
         quantity.value = '';
         //styling of <li> :checked
         checkBox.addEventListener('change', (e)=>{
             if(e.target.checked){
                 console.log('działa');
-                li.classList.add('li-checked');
+                listItems.classList.add('li-checked');
             }else{
-                li.classList.remove('li-checked');
+                listItems.classList.remove('li-checked');
             }
         })
-        //dragdrop
-        let del;
-        function dragStart (e) {
-                console.log('start');
-                del = document.createElement('div');
-                del.textContent = 'Usuń';
-                del.classList.add('del');
-                document.body.appendChild(del);
-                const set = e.dataTransfer.setData('Text', e.target.id);
-            
-        };
-        function dragEnd(){
-                console.log('end');
-                del.remove();
-        }
-        function dragEnter (e) {
-            if(e.target&&e.target.className==='del'){
-                console.log('enter');
-                e.target.classList.add('del-enter');
-            }
-        }
-        function dragOver (e) {
-            if(e.target&&e.target.matches('div.del')){
-                e.preventDefault();
-                console.log('over')
-            }
-        }
-        function dropElement (e) {
-            if(e.target&&e.target.matches('div.del')){
-                console.log('drop');
-                let data = e.dataTransfer.getData("Text");
-                let element = document.getElementById (data);
-                // element.parentNode.removeChild(element);
-                element.remove();
-            }
-        }
-        li.addEventListener('dragstart', dragStart);
-        li.addEventListener('dragend', dragEnd);
-        document.addEventListener('dragenter', dragEnter);
-        document.addEventListener('dragover', dragOver);
-        document.addEventListener('drop', dropElement);
 
         //removing alert items
         removeAlertItems()
@@ -120,7 +131,7 @@ function addItems(e) {
         }      
         formContainer.appendChild(alertItem);
     }
-    
+  
 }
 // LISTENERS
  form.addEventListener('submit', addItems);
