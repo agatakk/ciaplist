@@ -28,11 +28,11 @@
         <ul class="form__list-items"> 
             {% for item in items %}
             {% if item.tick == False %}
-            <li class="form__list-item" draggable="true"><input type="checkbox" name="ticker" value="{{ item.id }}" id="{{ item.id }}">
+            <li class="form__list-item" draggable="true" data-key="{{ item.item_name }}"><input type="checkbox" name="ticker" value="{{ item.id }}" id="{{ item.id }}">
                 <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label>
             </li>
             {% else %}
-            <li class="form__list-item" draggable="true"><input type="checkbox" checked name="ticker" value="{{ item.id }}" id="{{ item.id }}">
+            <li class="form__list-item" draggable="true" data-key="{{ item.item_name }}"><input type="checkbox" checked name="ticker" value="{{ item.id }}" id="{{ item.id }}">
                 <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label>
             </li>
             {% endif %}
@@ -41,7 +41,7 @@
                 <input type="submit" class="btn" value="Sync"></ul>
         </form>
 
-    <script src="{% static 'main/main.js' %}"></script>
+    <script src="{% static 'main/ciap_main.js' %}"></script>
 </body>
 </html>
 

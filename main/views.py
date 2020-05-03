@@ -7,15 +7,6 @@ from main.forms import Item_input_form
 def main(request):
     if request.method == "POST":
         form = Item_input_form(request.POST)
-        checkbox_list = request.POST.getlist('ticker')
-        print(checkbox_list)
-        for elem in checkbox_list:
-            item_to_mod = ListItem.objects.get(id=elem)
-            if item_to_mod.tick==False:
-                item_to_mod.tick=True
-                item_to_mod.save()
-            elif item_to_mod.tick==True:
-                pass
 
         if form.is_valid():
             form.save()

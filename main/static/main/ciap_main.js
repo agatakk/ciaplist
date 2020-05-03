@@ -7,7 +7,7 @@ const list = document.querySelector('.form__list-items');
 const formContainer = document.querySelector('.form__alert-messages-container');
 const form = document.querySelector('.form');
 let alertItem;
-console.log('ok');
+
 // FUNCTIONS
 function removeAlertItems(){
     if(alertItem){
@@ -18,22 +18,23 @@ function removeAlertItems(){
     }  
 }
 function addItems(e) {
-    // e.preventDefault();
-
+    e.preventDefault();
+    
     if(input.value.trim()!=""&&quantity.value.trim()!=""){
-       // deleting alerts on input
-       input.classList.remove('input-alert');
-       quantity.classList.remove('input-alert');
+        // deleting alerts on input
+        input.classList.remove('input-alert');
+        quantity.classList.remove('input-alert');
         //creating the <li> elements
-       let listItem = input.value;
-       let itemQuantity = quantity.value;
-       const li = document.createElement('li');
-       li.className = 'form__list-item';
-       li.draggable = 'true';    
-       li.id = listItem
-       li.dataset.key=listItem;
-       //creating input type=checkbox
-       const checkBox = document.createElement('input');
+        let listItem = input.value;
+        let itemQuantity = quantity.value;
+        const li = document.createElement('li');
+        li.id = listItem;
+        li.dataset.key=listItem;
+        // li.className = 'form__list-item';
+        // li.draggable = 'true';
+
+        // creating input type=checkbox
+        const checkBox = document.createElement('input');
         checkBox.type = 'checkbox';
         checkBox.id = listItem;
         //creating label for input type=checkbox
@@ -48,7 +49,7 @@ function addItems(e) {
         listItems.className = 'form__list-item';
         listItems.appendChild(checkBox);
         listItems.appendChild(checkBoxLabel);
-
+        
         //dragdrop
              let del;
              function dragStart (e) {
@@ -58,7 +59,7 @@ function addItems(e) {
                      del.classList.add('del');
                      document.body.appendChild(del);
                      const set = e.dataTransfer.setData('Text', e.target.id);
-
+                 
              };
              function dragEnd(){
                      console.log('end');
@@ -92,12 +93,8 @@ function addItems(e) {
              document.addEventListener('dragenter', dragEnter);
              document.addEventListener('dragover', dragOver);
              document.addEventListener('drop', dropElement);
-
- 
-
-    
-    //     input.value='';
-    //     quantity.value = '';
+        input.value='';
+        quantity.value = '';
         //styling of <li> :checked
         checkBox.addEventListener('change', (e)=>{
             if(e.target.checked){
@@ -107,10 +104,10 @@ function addItems(e) {
                 listItems.classList.remove('li-checked');
             }
         })
-            //removing alert items
+
+        //removing alert items
         removeAlertItems()
     }else{
-        e.preventDefault();
         alertItem = document.createElement('p');
         alertItem.className = 'alert';
         //NO ITEM
@@ -125,17 +122,16 @@ function addItems(e) {
             quantity.classList.add('input-alert');
             input.classList.remove('input-alert');
             removeAlertItems()
-        }
-        else {
+        }else{
             //NO INPUT AT ALL
             alertItem.textContent = 'No heloł, nic nie wpisałeś. WTF?';
             quantity.classList.add('input-alert');
             input.classList.add('input-alert');
             removeAlertItems()
-        }
+        }      
         formContainer.appendChild(alertItem);
-
-    } 
+    }
+  
 }
 // LISTENERS
  form.addEventListener('submit', addItems);
