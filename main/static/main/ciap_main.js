@@ -25,11 +25,11 @@ function addItems(e) {
         input.classList.remove('input-alert');
         quantity.classList.remove('input-alert');
         //creating the <li> elements
-        let listItem = input.value;
-        let itemQuantity = quantity.value;
-        const li = document.createElement('li');
-        li.id = listItem;
-        li.dataset.key=listItem;
+        // let listItem = input.value;
+        // let itemQuantity = quantity.value;
+        // const li = document.createElement('li');
+        // li.id = listItem;
+        // li.dataset.key=listItem;
         // li.className = 'form__list-item';
         // li.draggable = 'true';
 

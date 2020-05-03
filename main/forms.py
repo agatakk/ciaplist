@@ -1,6 +1,6 @@
-from django.forms import ModelForm, TextInput
+from django.forms import ModelForm, TextInput, CheckboxInput
 from main import models
-
+from django.forms.models import formset_factory
 class Item_input_form(ModelForm):
     class Meta:
         model = models.ListItem

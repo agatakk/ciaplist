@@ -25,29 +25,29 @@ function addItems(e) {
        input.classList.remove('input-alert');
        quantity.classList.remove('input-alert');
         //creating the <li> elements
-       let listItem = input.value;
-       let itemQuantity = quantity.value;
-       const li = document.createElement('li');
-       li.className = 'form__list-item';
-       li.draggable = 'true';    
-       li.id = listItem
-       li.dataset.key=listItem;
+    //    let listItem = input.value;
+    //    let itemQuantity = quantity.value;
+    //    const li = document.createElement('li');
+    //    li.className = 'form__list-item';
+    //    li.draggable = 'true';    
+    //    li.id = listItem
+    //    li.dataset.key=listItem;
        //creating input type=checkbox
-       const checkBox = document.createElement('input');
-        checkBox.type = 'checkbox';
-        checkBox.id = listItem;
-        //creating label for input type=checkbox
-        const checkBoxLabel = document.createElement('label');
-        checkBoxLabel.htmlFor = 'id';
-        checkBoxLabel.textContent = `${listItem} [${itemQuantity}]`;
-        //appending elements to list
-        list.appendChild(li);
+    //    const checkBox = document.createElement('input');
+    //     checkBox.type = 'checkbox';
+    //     checkBox.id = listItem;
+    //     //creating label for input type=checkbox
+    //     const checkBoxLabel = document.createElement('label');
+    //     checkBoxLabel.htmlFor = 'id';
+    //     checkBoxLabel.textContent = `${listItem} [${itemQuantity}]`;
+    //     //appending elements to list
+    //     list.appendChild(li);
         const listItems = document.querySelector(`li[data-key="${input.value}"]`);
         console.log(listItems);    
         listItems.draggable = 'true';
         listItems.className = 'form__list-item';
-        listItems.appendChild(checkBox);
-        listItems.appendChild(checkBoxLabel);
+        // listItems.appendChild(checkBox);
+        // listItems.appendChild(checkBoxLabel);
 
         //dragdrop
              let del;

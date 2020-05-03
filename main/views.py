@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect
 from main.models import ListItem
 from main.forms import Item_input_form
+from django.forms import formset_factory
 
 # Create your views here.
 
 def main(request):
     if request.method == "POST":
         form = Item_input_form(request.POST)
-
         if form.is_valid():
             form.save()
             return redirect(main)
@@ -26,12 +26,6 @@ def remove_item(request, item_id):
 def sync_list(request):
     checkbox_list = request.POST.getlist('ticker')
     print(checkbox_list)
-    # incoming_checklist = []
-    # for incoming_item in checkbox_list:
-    #     incoming_checklist.append(incoming_item.id)
-    
-    # print(incoming_checklist)
-
 
     stored_checked_items = ListItem.objects.filter(tick=True)
     stored_checklist = []
@@ -52,10 +46,5 @@ def sync_list(request):
             item_to_mod = ListItem.objects.get(id=elem)
             item_to_mod.tick=False
             item_to_mod.save()
-            
-            # if item_to_mod.tick==False:
-            #     item_to_mod.tick=True
-            #     item_to_mod.save()
-            # elif item_to_mod.tick==True:
-            #     pass
+
     return redirect(main)
