@@ -13,9 +13,8 @@ def main(request):
             return redirect(main)
         
     else:
-        form = Item_input_form
-        listed_items = ListItem.objects.all()
-        return render(request, 'main/index.html', {'form':form, 'items':listed_items})
+        listed_items = ListItem.objects.order_by('tick')
+        return render(request, 'main/index.html', {'items':listed_items})
 
 
 def remove_item(request, item_id):
