@@ -10,31 +10,40 @@ body{
 /* button styles */
 .btn{
     background-color: #593528;
-    border:1px solid #593528;
-    padding: .5rem 1.8rem;
-    border-radius: 5px;
-    color: #F2A2B1;
-    font-size: 1.1rem;
+    text-align: center;
+    /* padding: .5rem 1.8rem; */
+    color: #E6DCDE;
+    border:0;
+    font-size: 1rem;
     font-family: 'Lato', sans-serif;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* navbar styles */
 .navbar{
-    /* position: fixed; */
+    position: fixed;
+    top:0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     background-color: #5c8d2a;
-    height: 8vh;
-    padding: 8px 20px;
+    height: 9vh;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
  .navbar__login-button{
-     margin-right: 80px;
+    width: 100px;
+    height: 38px;
+    margin-right: 60px;
  }
+
  .navbar__title{
-     color: #593528;
-     margin-left: 50px;
+     color: #F4ECE1;
+     font-size: 2rem;
+     line-height: -8;
+     margin-left: 60px;
      font-family: 'Rage', sans-serif;
+     font-weight: 300;
  }
 
  /* form styles */
