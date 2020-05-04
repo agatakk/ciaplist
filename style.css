@@ -4,7 +4,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color:#F2DEC4;
+    background-color:#E6DCDE;
     font-family: 'Lato', sans-serif;
 }
 /* button styles */
@@ -24,7 +24,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(91, 140, 42, 0.7);
+    background-color: #5c8d2a;
     height: 8vh;
     padding: 8px 20px;
 }
@@ -34,7 +34,7 @@ body{
  .navbar__title{
      color: #593528;
      margin-left: 50px;
-     font-family: 'Lato', sans-serif;
+     font-family: 'Rage', sans-serif;
  }
 
  /* form styles */

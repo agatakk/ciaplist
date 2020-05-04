@@ -28,6 +28,8 @@ function addItems(e) {
         let itemQuantity = quantity.value;
         const li = document.createElement('li');
         li.id = listItem;
+        li.draggable = 'true';
+        li.className = 'form__list-item';
         // creating input type=checkbox
         const checkBox = document.createElement('input');
         checkBox.type = 'checkbox';
@@ -45,17 +47,22 @@ function addItems(e) {
         //dragdrop
         let del;
         function dragStart (e) {
-            console.log('start');
-            del = document.createElement('div');
-            del.textContent = 'Usuń';
-            del.classList.add('del');
-            document.body.appendChild(del);
-            e.dataTransfer.setData('Text', e.target.id);
+            if(e.target && e.target.nodeName == "LI"){
+                console.log('start');
+                del = document.createElement('div');
+                del.textContent = 'Usuń';
+                del.classList.add('del');
+                document.body.appendChild(del);
+                e.dataTransfer.setData('Text', e.target.id);
+            }
             
-        };
-        function dragEnd(){
-            console.log('end');
-            del.remove();
+        }
+        function dragEnd(e){
+            console.log('koniec')
+            if(e.target && e.target.nodeName == "LI"){
+                del.remove();
+                console.log('end');
+            }
         }
         function dragEnter (e) {
             if(e.target&&e.target.className==='del'){
@@ -78,31 +85,30 @@ function addItems(e) {
                 console.log(element);
                 //  element.parentNode.removeChild(element);
                 element.remove();
-                console.log(element);
             }
         };
-        const label = document.querySelectorAll('li>label');
-        console.log(label);
-        label.forEach((item)=>{
-            const listItems = document.querySelector(`li[data-key="${item.htmlFor}"]`);
-            console.log(listItems);    
-            listItems.draggable = 'true';
-            listItems.className = 'form__list-item';
-            listItems.addEventListener('dragstart', dragStart);
-            listItems.addEventListener('dragend', dragEnd);
-        });
+        // const label = document.querySelectorAll('li>label');
+        // console.log(label);
+        // label.forEach((item)=>{
+        //     const listItems = document.querySelector(`li[data-key="${item.htmlFor}"]`);
+        //     console.log(listItems);    
+        //     
+        // });
+        list.addEventListener('dragstart', dragStart);
+        document.addEventListener('dragend', dragEnd);
         document.addEventListener('dragenter', dragEnter);
         document.addEventListener('dragover', dragOver);
         window.addEventListener('drop', dropElement);
         input.value='';
         quantity.value = '';
+
         //styling of <li> :checked
         checkBox.addEventListener('change', (e)=>{
             if(e.target.checked){
                 console.log('działa');
-                listItems.classList.add('li-checked');
+                li.classList.add('li-checked');
             }else{
-                listItems.classList.remove('li-checked');
+                li.classList.remove('li-checked');
             }
         })
 
