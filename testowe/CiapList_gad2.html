@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/main/style.css"> -->
+    <title>CiapList</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="navbar__title">Ciaplist</h1>
+        <button class="navbar__login-button btn">Zaloguj</button>
+    </nav>
+    
+    <form action="/" method="post" class="form" enctype="multipart/form-data">
+        <div class="form__input-container">
+            <input type="hidden" name="csrfmiddlewaretoken" value="VZRunfBQppLgqPDMTPuhTXlwC9E1YuXWgk6KJ9xqVgQmp91uLlQGteWSEWmIuYmj">
+            <label for="id_item_name">Co?</label> 
+            <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name">
+            <label for="id_quantity">Ile?</label> <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity">
+            <input type="submit" class="btn" value="Dodaj">
+        </div>
+    </form>
+        <div class="form__alert-messages-container">
+                    
+        </div>
+        <form action="/sync_list/" method="post" id="itemlist">
+            <input type="hidden" name="csrfmiddlewaretoken" value="VZRunfBQppLgqPDMTPuhTXlwC9E1YuXWgk6KJ9xqVgQmp91uLlQGteWSEWmIuYmj">
+        <ul class="form__list-items"> 
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Z telefonu"><input type="checkbox" name="ticker" value="6" id="6">
+                <label for="Z telefonu">Z telefonu [Yoyoyo]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="No i"><input type="checkbox" name="ticker" value="5" id="5">
+                <label for="No i">No i [gites]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Racjonalne żywienie"><input type="checkbox" name="ticker" value="7" id="7">
+                <label for="Racjonalne żywienie">Racjonalne żywienie [5 posiłków dziennie]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Grzęda"><input type="checkbox" checked name="ticker" value="3" id="3">
+                <label for="Grzęda">Grzęda [5]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Ciapcię"><input type="checkbox" checked name="ticker" value="2" id="2">
+                <label for="Ciapcię">Ciapcię [powiedzmijakmamżyć]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="jajco"><input type="checkbox" checked name="ticker" value="1" id="1">
+                <label for="jajco">jajco [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Elemelek"><input type="checkbox" checked name="ticker" value="4" id="4">
+                <label for="Elemelek">Elemelek [Elemelek1]</label>
+            </li>
+            
+                   
+                
+                </ul>
+                <input type="submit" form="itemlist" class="btn" value="Sync">
+            </form>
+<p align="center">(C) 2020 Ciampin Interactive</p>
+    <script src="/static/main/main.js"></script>
+</body>
+</html>
+
