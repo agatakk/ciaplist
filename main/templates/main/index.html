@@ -16,17 +16,20 @@
     <form action="{% url 'main' %}" method="post" class="form" enctype="multipart/form-data">
         <div class="form__input-container">
             {% csrf_token %}
-            <label for="id_item_name">Co?</label> 
-            <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name">
-            <label for="id_quantity">Ile?</label> <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity">
-            <input type="submit" class="btn" value="Dodaj">
+            <label for="id_item_name"></label> 
+            <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name" placeholder="Co?">
+            <label for="id_quantity"></label>
+            <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity" placeholder="Ile?">
+            <button type="submit" class="form__submit-btn btn">Dodaj</button>
         </div>
     </form>
         <div class="form__alert-messages-container">
-                    
+
         </div>
-        <form action="{% url 'sync_list' %}" method="post" id="itemlist">
+        <div class="form__input-container">
+        <form class="form" action="{% url 'sync_list' %}" method="post" id="itemlist">
             {% csrf_token %}
+        <button type="submit" form="itemlist" class="btn">Sync</button>
         <ul class="form__list-items"> 
             {% for item in items %}
             {% if item.tick == False %}
@@ -41,9 +44,11 @@
             {% endfor %}       
                 
                 </ul>
-                <input type="submit" form="itemlist" class="btn" value="Sync">
             </form>
-<p align="center">(C) 2020 Ciampin Interactive</p>
+        </div>
+        <footer class="footer">
+            <p class="footer__info">&copy 2020 Ciampin Interactive</p>
+        </footer>
     <script src="{% static 'main/main.js' %}"></script>
 </body>
 </html>
