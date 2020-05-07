@@ -17,8 +17,8 @@
         <div class="form__input-container">
             {% csrf_token %}
             <label for="id_item_name"></label> 
-            <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name">
-            <label for="id_quantity" placeholder="Co?"></label>
+            <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name" placeholder="Co?">
+            <label for="id_quantity"></label>
             <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity" placeholder="Ile?">
             <button type="submit" class="form__submit-btn btn">Dodaj</button>
         </div>
