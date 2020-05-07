@@ -8,32 +8,29 @@
     <title>CiapList</title>
 </head>
 <body>
-    <!-- <div class="background-image">
-        <img src="vegetable.png" alt="burak warzywo w tle aplikacji">
-    </div> -->
     <nav class="navbar">
         <h1 class="navbar__title">Ciaplist</h1>
         <button class="navbar__login-button btn">Zaloguj</button>
     </nav>
     <form action="" class="form">
         <div class="form__input-container">
-            
-            <label for="item-name"></label>
-            <input type="text" class="form__item-input" id="item-name" placeholder="Co?">          
-            <label for="item-quantity"></label>
-            <input type="text" class="form__item-quantity" id="item-quantity" placeholder="Ile?">
+            <label for="id_item_name"></label> 
+            <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name">
+            <label for="id_quantity" placeholder="Co?"></label> 
+            <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity" placeholder="Ile?">
+            <!-- <input type="submit" class="btn" value="Dodaj"> -->
             <button type="submit" class="form__submit-btn btn">Dodaj</button>
         </div>
         <div class="form__alert-messages-container">
             
         </div>
-        
-        <form action="">
-            <button type="submit" class="btn">Sync</button>
-            <ul class="form__list-items">
-            </ul>
-        </form>
     </form>
+    <form action="" class="form">
+        <button type="submit" class="btn">Sync</button>
+        <ul class="form__list-items">
+        </ul>
+    </form>
+   
     <footer class="footer">
         <p class="footer__info">&copyCiampinInteractive</p>
         <div class='footer__icon-atribution'>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
