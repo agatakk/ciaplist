@@ -1,11 +1,38 @@
 *{
     box-sizing: border-box;
 }
+html{
+    height: 100%;
+}
 body{
+    position: relative;
     margin: 0;
     padding: 0;
+    min-height: 100%;
     background-color:#E6DCDE;
     font-family: 'Lato', sans-serif;
+    background-image: url('vegetable.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
+}
+.background-image{
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    z-index: -1;
+   
+  
+}
+.background-image img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%); */
 }
 /* button styles */
 .btn{
@@ -19,11 +46,11 @@ body{
     font-size: 1rem;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-    transition: all .15s;
+    box-shadow: 3px 3px 5px  rgba(0, 0, 0, 0.3);
+    transition: all .3s;
 }
 .btn:hover{
-    box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
 
@@ -58,10 +85,8 @@ body{
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     margin: 50px;
-     padding: 20px;
+     padding: 60px 0;
  }
- 
 .form__input-container{
     display: flex;
     flex-wrap: wrap;
@@ -95,6 +120,7 @@ body{
  /* list styles */
  .form__list-items{
    list-style:none;
+   margin: 2rem 0;
    /* border: 1px solid #F2A2B1; */
    padding-inline-start: 0;
  }
@@ -133,7 +159,7 @@ body{
      display: flex;
      justify-content: center;
      align-items: center;
-     position: relative;
+     position: absolute;
      bottom: 0;
      left:0;
      height: 12vh;
@@ -144,6 +170,17 @@ body{
  .footer__info{
      margin: 0 auto;
      color: #F4ECE1;
+ }
+ .footer__icon-atribution{
+     color:white;
+     font-size: .5rem;
+     width: 5vw;
+     margin-right: 2rem;
+     
+ }
+ .footer__icon-atribution a{
+     text-decoration: none;
+     color: white;
  }
  /* styles added in JS */
 

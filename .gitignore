@@ -122,3 +122,6 @@ dmypy.json
 # End of https://www.gitignore.io/api/django
 testowe/CiapList_gad.html
 ciaplist/secrets.py
+main/static/main/vegetable.svg
+main/static/main/index.html
+main/static/main/vegetable@2x.png
