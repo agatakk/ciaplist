@@ -67,7 +67,6 @@ body{
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
  .navbar__login-button{
- 
     margin-right: 60px;
  }
 
@@ -98,7 +97,7 @@ body{
 
 /* input what and how many styles */
  .form__item-input, .form__item-quantity{
-     margin: 20px 5px;
+     margin: 20px 15px;
      padding: 12px;
      background-color: #F4ECE1;
      border: 1px solid #593528;
@@ -142,7 +141,6 @@ body{
  /* items when checked styless */
  label{
      color: #593528;
-     padding: .2rem .5rem;
  }
 
  input[type="checkbox" i]{
