@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
-from main.models import ListItem
-from main.forms import Item_input_form
+
 from django.forms import formset_factory
+
+from .models import ListItem
+from .forms import Item_input_form
+
 
 # Create your views here.
 
@@ -13,7 +16,7 @@ def main(request):
             return redirect(main)
         
     else:
-        listed_items = ListItem.objects.order_by('tick')
+        listed_items = ListItem.objects.order_by('tick', '-id')
         return render(request, 'main/index.html', {'items':listed_items})
 
 

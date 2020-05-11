@@ -28,11 +28,15 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'ciaplist.herokuapp.com']
 
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 # Application definition
 
 INSTALLED_APPS = [
     'main',
+    'debug_toolbar',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
