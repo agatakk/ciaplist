@@ -74,17 +74,20 @@ body{
      color: #F4ECE1;
      font-size: 2rem;
      margin-left: 60px;
-     font-family: 'Rage', sans-serif;
+     font-family: 'Rage Italic', sans-serif;
      font-weight: 300;
  }
 
  /* form styles */
- .form{
+ .form, .form-list{
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     padding: 60px 0;
+     padding: 70px 0 0 0;
+ }
+ .form-list{
+     padding: 0 0 15vh 0;
  }
 .form__input-container{
     display: flex;
@@ -94,7 +97,6 @@ body{
     width: 100%;
     padding: 2rem;
 }
-
 /* input what and how many styles */
  .form__item-input, .form__item-quantity{
      margin: 20px 15px;
@@ -155,6 +157,7 @@ body{
  }
  .footer{
      display: flex;
+     flex-direction: column;
      justify-content: center;
      align-items: center;
      position: absolute;
@@ -162,19 +165,19 @@ body{
      left:0;
      height: 12vh;
      width: 100%;
+     padding: .5rem;
      background-color: #5c8d2a;
  }
 
  .footer__info{
-     margin: 0 auto;
+     margin: .7rem 0;
      color: #F4ECE1;
+     text-align: center;
  }
  .footer__icon-atribution{
      color:white;
      font-size: .5rem;
-     width: 5vw;
-     margin-right: 2rem;
-     
+     text-align: center;
  }
  .footer__icon-atribution a{
      text-decoration: none;

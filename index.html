@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media_queries.css">
+    <link rel="stylesheet" href="font-rage.css">
     <title>CiapList</title>
 </head>
 <body>
@@ -13,24 +15,27 @@
         <h1 class="navbar__title">Ciaplist</h1>
         <button class="navbar__login-button btn">Zaloguj</button>
     </nav>
-    <form action="" class="form">
-        <div class="form__input-container">
-            <label for="id_item_name"></label> 
-            <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name" placeholder="Co?">
-            <label for="id_quantity" placeholder="Co?"></label> 
-            <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity" placeholder="Ile?">
-            <!-- <input type="submit" class="btn" value="Dodaj"> -->
-            <button type="submit" class="form__submit-btn btn">Dodaj</button>
-        </div>
-        <div class="form__alert-messages-container">
-            
-        </div>
-    </form>
-    <form action="" class="form">
-        <button type="submit" class="btn">Sync</button>
-        <ul class="form__list-items">
-        </ul>
-    </form>
+    <section class="forms">
+        <form action="" class="form">
+            <div class="form__input-container">
+                <label for="id_item_name"></label> 
+                <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name" placeholder="Co?">
+                <label for="id_quantity" placeholder="Co?"></label> 
+                <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity" placeholder="Ile?">
+                <!-- <input type="submit" class="btn" value="Dodaj"> -->
+                <button type="submit" class="form__submit-btn btn">Dodaj</button>
+            </div>
+            <div class="form__alert-messages-container">
+                
+            </div>
+        </form>
+        <form action="" class="form-list">
+            <button type="submit" class="btn">Sync</button>
+            <ul class="form__list-items">
+            </ul>
+        </form>
+
+    </section>
    
     <footer class="footer">
         <p class="footer__info">&copyCiampinInteractive</p>
