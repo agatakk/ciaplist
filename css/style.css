@@ -11,7 +11,7 @@ body{
     min-height: 100%;
     background-color:#E6DCDE;
     font-family: 'Lato', sans-serif;
-    background-image: url('vegetable.png');
+    background-image: url('../img/vegetable.png');
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
