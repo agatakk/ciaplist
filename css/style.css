@@ -16,6 +16,7 @@ body{
     background-position-x: center;
     background-position-y: center;
     background-attachment: fixed;
+
 }
 .background-image{
     width: 100%;
@@ -200,20 +201,27 @@ body{
 }
 .del{
     position: fixed;
-    bottom: 0;
-    left: 0;
+    z-index:2;
+    bottom: 16vh;
+    left: calc(50vw - 35px);
+    border-radius:50%;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 10vh;
+    width: 170px;
+    height: 170px;
+    margin:0 auto;
     text-align: center;
-    color: white;
+    color: #F2A007;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     line-height: 1.2rem;
+    line-height: 1.2;
+    padding:.5rem;
 }
 
 .del-enter{
-   border: 1px solid black;
-    
+   border: 1px solid #5c8d2a;
+}
+.none{
+    display:none;
 }
 

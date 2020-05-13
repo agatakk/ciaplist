@@ -45,22 +45,22 @@ function addItems(e) {
         li.appendChild(checkBoxLabel);
         
         //dragdrop
-        let del;
+        const del = document.querySelector('#del');
         function dragStart (e) {
-            if(e.target && e.target.nodeName == "LI"){
+            if(e.target&&e.target.nodeName == "LI"){
                 console.log('start');
-                del = document.createElement('div');
-                del.textContent = 'Usuń';
-                del.classList.add('del');
-                document.body.appendChild(del);
+                // del.textContent = 'X';
+                del.className = "del";
+                setTimeout(()=>e.target.className = 'none', 0);                
                 e.dataTransfer.setData('Text', e.target.id);
             }
             
         }
         function dragEnd(e){
             console.log('koniec')
-            if(e.target && e.target.nodeName == "LI"){
-                del.remove();
+            if( e.target&&e.target.nodeName == "LI"){
+                del.className = "none";
+                e.target.className = "form__list-item"; 
                 console.log('end');
             }
         }
@@ -76,15 +76,15 @@ function addItems(e) {
                 console.log('over')
             }
         }
+        //drop
         function dropElement (e) {
             if(e.target&&e.target.matches('div.del')){
                 e.preventDefault();
                 console.log('drop');
                 const data = e.dataTransfer.getData("Text");
                 const element = document.getElementById(data);
-                console.log(element);
-                //  element.parentNode.removeChild(element);
                 element.remove();
+                del.className = 'none';
             }
         };
         // const label = document.querySelectorAll('li>label');
@@ -94,7 +94,7 @@ function addItems(e) {
         //     console.log(listItems);    
         //     
         // });
-        list.addEventListener('dragstart', dragStart);
+        document.addEventListener('dragstart', dragStart);
         document.addEventListener('dragend', dragEnd);
         document.addEventListener('dragenter', dragEnter);
         document.addEventListener('dragover', dragOver);
