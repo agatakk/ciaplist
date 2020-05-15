@@ -16,6 +16,7 @@ body{
     background-position-x: center;
     background-position-y: center;
     background-attachment: fixed;
+
 }
 .background-image{
     width: 100%;
@@ -67,7 +68,6 @@ body{
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
  .navbar__login-button{
- 
     margin-right: 60px;
  }
 
@@ -75,17 +75,20 @@ body{
      color: #F4ECE1;
      font-size: 2rem;
      margin-left: 60px;
-     font-family: 'Rage', sans-serif;
+     font-family: 'Rage Italic', sans-serif;
      font-weight: 300;
  }
 
  /* form styles */
- .form{
+ .form, .form-list{
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     padding: 60px 0;
+     padding: 70px 0 0 0;
+ }
+ .form-list{
+     padding: 0 0 15vh 0;
  }
 .form__input-container{
     display: flex;
@@ -95,10 +98,9 @@ body{
     width: 100%;
     padding: 2rem;
 }
-
 /* input what and how many styles */
  .form__item-input, .form__item-quantity{
-     margin: 20px 5px;
+     margin: 20px 15px;
      padding: 12px;
      background-color: #F4ECE1;
      border: 1px solid #593528;
@@ -142,7 +144,6 @@ body{
  /* items when checked styless */
  label{
      color: #593528;
-     padding: .2rem .5rem;
  }
 
  input[type="checkbox" i]{
@@ -157,6 +158,7 @@ body{
  }
  .footer{
      display: flex;
+     flex-direction: column;
      justify-content: center;
      align-items: center;
      position: absolute;
@@ -164,19 +166,19 @@ body{
      left:0;
      height: 12vh;
      width: 100%;
+     padding: .5rem;
      background-color: #5c8d2a;
  }
 
  .footer__info{
-     margin: 0 auto;
+     margin: .7rem 0;
      color: #F4ECE1;
+     text-align: center;
  }
  .footer__icon-atribution{
      color:white;
      font-size: .5rem;
-     width: 5vw;
-     margin-right: 2rem;
-     
+     text-align: center;
  }
  .footer__icon-atribution a{
      text-decoration: none;
@@ -199,20 +201,27 @@ body{
 }
 .del{
     position: fixed;
-    bottom: 0;
-    left: 0;
+    z-index:2;
+    bottom: 16vh;
+    left: calc(50vw - 35px);
+    border-radius:50%;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 10vh;
+    width: 170px;
+    height: 170px;
+    margin:0 auto;
     text-align: center;
-    color: white;
+    color: #F2A007;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     line-height: 1.2rem;
+    line-height: 1.2;
+    padding:.5rem;
 }
 
 .del-enter{
-   border: 1px solid black;
-    
+   border: 1px solid #5c8d2a;
+}
+.none{
+    display:none;
 }
 

@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://kit.fontawesome.com/3881f6afec.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/d0c684794f.js"></script>
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/media_queries.css' %}">
+    <link rel="stylesheet" href="{% static 'main/font-rage.css' %}">
     <title>CiapList</title>
 </head>
 <body>
@@ -13,6 +17,7 @@
         <h1 class="navbar__title">Ciaplist</h1>
         <button class="navbar__login-button btn">Zaloguj</button>
     </nav>
+    <section class="forms">
     <form action="{% url 'main' %}" method="post" class="form" enctype="multipart/form-data">
         <div class="form__input-container">
             {% csrf_token %}
@@ -45,6 +50,10 @@
                 </ul>
             </form>
 
+        </section>
+        <div class="none" id="del">
+            <i class="far fa-trash-alt"></i>
+        </div>
         <footer class="footer">
             <p class="footer__info">&copy 2020 Ciampin Interactive</p>
             <div class='footer__icon-atribution'>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
