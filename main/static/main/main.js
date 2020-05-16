@@ -17,7 +17,7 @@ function removeAlertItems(){
     }  
 }
 function addItems(e) {
-    e.preventDefault();
+    // e.preventDefault();
     
     if(input.value.trim()!=""&&quantity.value.trim()!=""){
         // deleting alerts on input
