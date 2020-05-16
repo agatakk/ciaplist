@@ -79,7 +79,7 @@ function addItems(e) {
         //drop
         function dropElement (e) {
             if(e.target&&e.target.matches('div.del')){
-                // e.preventDefault();
+                e.preventDefault();
                 console.log('drop');
                 const data = e.dataTransfer.getData("Text");
                 const element = document.getElementById(data);
