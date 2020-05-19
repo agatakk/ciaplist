@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://ciaplist.herokuapp.com/ -->
+<html lang="pl" class="fa-events-icons-ready" capturelastxpos="220" capturelastypos="47" capturelasttime="1589899997546" capturedocid="1589899986300" capturelastmousedownxpos="92" capturelastmousedownypos="293" capturelastmouseupxpos="93"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="./CiapList-gad3_files/3881f6afec.js.pobrane" crossorigin="anonymous"></script><link rel="stylesheet" href="./CiapList-gad3_files/free.min.css" media="all"><link rel="stylesheet" href="./CiapList-gad3_files/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="./CiapList-gad3_files/free-v4-shims.min.css" media="all">
+    <script src="./CiapList-gad3_files/d0c684794f.js.pobrane"></script><link href="./CiapList-gad3_files/d0c684794f.css" media="all" rel="stylesheet">
+    <link rel="stylesheet" href="./CiapList-gad3_files/style.62372ac75294.css">
+    <link rel="stylesheet" href="./CiapList-gad3_files/media_queries.b4449af1d691.css">
+    <link rel="stylesheet" href="./CiapList-gad3_files/font-rage.cbe1773b2e75.css">
+    <title>CiapList</title>
+</head>
+<body style="">
+    <nav class="navbar">
+        <h1 class="navbar__title">Ciaplist</h1>
+        <button class="navbar__login-button btn">Zaloguj</button>
+    </nav>
+    <section class="forms">
+    <form action="http://ciaplist.herokuapp.com/" method="post" class="form" enctype="multipart/form-data">
+        <div class="form__input-container">
+            <input type="hidden" name="csrfmiddlewaretoken" value="5BEn0oVDDhUFERHRPTOIlwyiUKkbYepi4KgTwewpuxAsGFWBWbb3zNU5WWf41fao">
+            <label for="id_item_name"></label> 
+            <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name" placeholder="Co?">
+            <label for="id_quantity"></label>
+            <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity" placeholder="Ile?">
+            <button type="submit" class="form__submit-btn btn">Dodaj</button>
+        </div>
+        <div class="form__alert-messages-container">
+
+        </div>
+    </form>
+        <form class="form" action="http://ciaplist.herokuapp.com/sync_list/" method="post" id="itemlist">
+            <input type="hidden" name="csrfmiddlewaretoken" value="5BEn0oVDDhUFERHRPTOIlwyiUKkbYepi4KgTwewpuxAsGFWBWbb3zNU5WWf41fao">
+        <button type="submit" form="itemlist" class="btn">Sync</button>
+        <ul class="form__list-items"> 
+            
+            
+            <li class="form__list-item" draggable="true" data-key="rzodkiewka" id="rzodkiewka"><input type="checkbox" name="ticker" value="83" id="83">
+                <label for="rzodkiewka">rzodkiewka [1 pęczek]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Przehrzebki" id="przegrzebki"><input type="checkbox" checked="" name="ticker" value="87" id="87">
+                <label for="Przehrzebki">Przehrzebki [2 paczki]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key=""><input type="checkbox" checked="" name="ticker" value="86" id="86">
+                <label for=""> []</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Tortillas"><input type="checkbox" checked="" name="ticker" value="85" id="85">
+                <label for="Tortillas">Tortillas [2op]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="orzechy (różne)"><input type="checkbox" checked="" name="ticker" value="84" id="84">
+                <label for="orzechy (różne)">orzechy (różne) [2-3paczki]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="ogórek gruntowy"><input type="checkbox" checked="" name="ticker" value="82" id="82">
+                <label for="ogórek gruntowy">ogórek gruntowy [6-7szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="browaria"><input type="checkbox" checked="" name="ticker" value="81" id="81">
+                <label for="browaria">browaria [6cio pak]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="czekolada jedyna"><input type="checkbox" checked="" name="ticker" value="80" id="80">
+                <label for="czekolada jedyna">czekolada jedyna [1 op]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="mleko"><input type="checkbox" checked="" name="ticker" value="79" id="79">
+                <label for="mleko">mleko [1l]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="jogurty owocowe"><input type="checkbox" checked="" name="ticker" value="78" id="78">
+                <label for="jogurty owocowe">jogurty owocowe [6 szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="jogurt naturalny"><input type="checkbox" checked="" name="ticker" value="77" id="77">
+                <label for="jogurt naturalny">jogurt naturalny [1szt-mały]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="orzechy włoskie"><input type="checkbox" checked="" name="ticker" value="76" id="76">
+                <label for="orzechy włoskie">orzechy włoskie [1 op]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="cebula biała"><input type="checkbox" checked="" name="ticker" value="75" id="75">
+                <label for="cebula biała">cebula biała [3 szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="pietruszka - natka"><input type="checkbox" checked="" name="ticker" value="74" id="74">
+                <label for="pietruszka - natka">pietruszka - natka [1 pęczek]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="pomidory malinowe"><input type="checkbox" checked="" name="ticker" value="73" id="73">
+                <label for="pomidory malinowe">pomidory malinowe [1 tacka]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="pomidorki koktajlowe"><input type="checkbox" checked="" name="ticker" value="72" id="72">
+                <label for="pomidorki koktajlowe">pomidorki koktajlowe [1 op]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="brokuł lub szparagi (lepiej szparagi)"><input type="checkbox" checked="" name="ticker" value="71" id="71">
+                <label for="brokuł lub szparagi (lepiej szparagi)">brokuł lub szparagi (lepiej szparagi) [zek]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="wołowina mielona"><input type="checkbox" checked="" name="ticker" value="70" id="70">
+                <label for="wołowina mielona">wołowina mielona [400g]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="kotlety schabowe"><input type="checkbox" checked="" name="ticker" value="69" id="69">
+                <label for="kotlety schabowe">kotlety schabowe [6 szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="jajka"><input type="checkbox" checked="" name="ticker" value="68" id="68">
+                <label for="jajka">jajka [10 szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="jabłka"><input type="checkbox" checked="" name="ticker" value="67" id="67">
+                <label for="jabłka">jabłka [5 szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="golonka z indyka"><input type="checkbox" checked="" name="ticker" value="66" id="66">
+                <label for="golonka z indyka">golonka z indyka [800g]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="por"><input type="checkbox" checked="" name="ticker" value="65" id="65">
+                <label for="por">por [1szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="seler"><input type="checkbox" checked="" name="ticker" value="64" id="64">
+                <label for="seler">seler [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="pietruszka-korzeń"><input type="checkbox" checked="" name="ticker" value="63" id="63">
+                <label for="pietruszka-korzeń">pietruszka-korzeń [3szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="marchewka"><input type="checkbox" checked="" name="ticker" value="62" id="62">
+                <label for="marchewka">marchewka [5szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="płatki owsiane"><input type="checkbox" checked="" name="ticker" value="61" id="61">
+                <label for="płatki owsiane">płatki owsiane [1 paczka]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Parmezan"><input type="checkbox" checked="" name="ticker" value="60" id="60">
+                <label for="Parmezan">Parmezan [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Kinder niespodzianka"><input type="checkbox" checked="" name="ticker" value="59" id="59">
+                <label for="Kinder niespodzianka">Kinder niespodzianka [3]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Masło"><input type="checkbox" checked="" name="ticker" value="58" id="58">
+                <label for="Masło">Masło [2]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Mąka kukurydziana"><input type="checkbox" checked="" name="ticker" value="57" id="57">
+                <label for="Mąka kukurydziana">Mąka kukurydziana [1kg]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Cytryna dla Bobina"><input type="checkbox" checked="" name="ticker" value="56" id="56">
+                <label for="Cytryna dla Bobina">Cytryna dla Bobina [5]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Winogrona"><input type="checkbox" checked="" name="ticker" value="42" id="42">
+                <label for="Winogrona">Winogrona [500g]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="przyprawa 5ciu smaków"><input type="checkbox" checked="" name="ticker" value="34" id="34">
+                <label for="przyprawa 5ciu smaków">przyprawa 5ciu smaków [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="czerwona cebula"><input type="checkbox" checked="" name="ticker" value="19" id="19">
+                <label for="czerwona cebula">czerwona cebula [2szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="rozmaryn"><input type="checkbox" checked="" name="ticker" value="16" id="16">
+                <label for="rozmaryn">rozmaryn [1 krzak]</label>
+            </li>
+            
+                   
+                
+                </ul>
+            </form>
+
+        </section>
+        <div class="none" id="del">
+            <i class="far fa-trash-alt"></i>
+        </div>
+        <footer class="footer">
+            <p class="footer__info">© 2020 Ciampin Interactive</p>
+            <div class="footer__icon-atribution">Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </footer>
+    <script src="js/main.js"></script>
+
+
+
+</body></html>

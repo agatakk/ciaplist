@@ -44,61 +44,7 @@ function addItems(e) {
         li.appendChild(checkBox);
         li.appendChild(checkBoxLabel);
         
-        //dragdrop
-        const del = document.querySelector('#del');
-        function dragStart (e) {
-            if(e.target&&e.target.nodeName == "LI"){
-                console.log('start');
-                // del.textContent = 'X';
-                del.className = "del";
-                setTimeout(()=>e.target.className = 'none', 0);                
-                e.dataTransfer.setData('Text', e.target.id);
-            }
-            
-        }
-        function dragEnd(e){
-            console.log('koniec')
-            if( e.target&&e.target.nodeName == "LI"){
-                del.className = "none";
-                e.target.className = "form__list-item"; 
-                console.log('end');
-            }
-        }
-        function dragEnter (e) {
-            if(e.target&&e.target.className==='del'){
-                console.log('enter');
-                e.target.classList.add('del-enter');
-            }
-        }
-        function dragOver (e) {
-            if(e.target&&e.target.matches('div.del')){
-                e.preventDefault();
-                console.log('over')
-            }
-        }
-        //drop
-        function dropElement (e) {
-            if(e.target&&e.target.matches('div.del')){
-                e.preventDefault();
-                console.log('drop');
-                const data = e.dataTransfer.getData("Text");
-                const element = document.getElementById(data);
-                element.remove();
-                del.className = 'none';
-            }
-        };
-        // const label = document.querySelectorAll('li>label');
-        // console.log(label);
-        // label.forEach((item)=>{
-        //     const listItems = document.querySelector(`li[data-key="${item.htmlFor}"]`);
-        //     console.log(listItems);    
-        //     
-        // });
-        document.addEventListener('dragstart', dragStart);
-        document.addEventListener('dragend', dragEnd);
-        document.addEventListener('dragenter', dragEnter);
-        document.addEventListener('dragover', dragOver);
-        window.addEventListener('drop', dropElement);
+        
         input.value='';
         quantity.value = '';
 
@@ -140,5 +86,62 @@ function addItems(e) {
     }
   
 }
-// LISTENERS
+// LISTENERS for addItems funntion
  form.addEventListener('submit', addItems);
+//-------------------------------------
+ //dragdrop
+ const del = document.querySelector('#del');
+ function dragStart (e) {
+     if(e.target&&e.target.nodeName == "LI"){
+         console.log('start');
+         del.className = "del";
+         e.dataTransfer.setData('Text', e.target.id);
+         setTimeout(()=>{e.target.className = 'none'}, 0);                
+     }
+     
+ }
+ function dragEnd(e){
+     console.log('koniec')
+     if( e.target&&e.target.nodeName == "LI"){
+         del.className = "none";
+         e.target.className = "form__list-item"; 
+         console.log('end');
+     }
+ }
+ function dragEnter (e) {
+     if(e.target&&e.target.className==='del'){
+         console.log('enter');
+         e.target.classList.add('del-enter');
+     }
+ }
+ function dragOver (e) {
+     if(e.target&&e.target.matches('div.del')){
+         e.preventDefault();
+         console.log('over')
+     }
+ }
+ //drop
+ function dropElement (e) {
+     if(e.target&&e.target.matches('div.del')){
+         e.preventDefault();
+         console.log('drop');
+         const data = e.dataTransfer.getData("Text");
+         const element = document.getElementById(data);
+         element.remove();
+         del.className = 'none';
+     }
+ };
+ // const label = document.querySelectorAll('li>label');
+ // console.log(label);
+ // label.forEach((item)=>{
+ //     const listItems = document.querySelector(`li[data-key="${item.htmlFor}"]`);
+ //     console.log(listItems);    
+ //     
+ // });
+
+ //listiners for drag-drop
+ document.addEventListener('dragstart', dragStart);
+ document.addEventListener('dragend', dragEnd);
+ document.addEventListener('dragenter', dragEnter);
+ document.addEventListener('dragover', dragOver);
+ document.addEventListener('drop', dropElement);
