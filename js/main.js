@@ -109,22 +109,27 @@ function addItems(e) {
      }
  }
  function dragEnter (e) {
-     if(e.target&&e.target.nodeName==='I'){
+     if(e.target&&(e.target.nodeName==='I'||e.target.className==='del')){
          console.log('enter');
-         const divDel = document.querySelector('.del');
-         divDel.classList.add('del-enter')
+         del.classList.add('del-enter')
         //  e.target.classList.add('del-enter');
      }
  }
  function dragOver (e) {
-     if(e.target&&e.target.matches('.far')){
+     if(e.target&&(e.target.matches('.far')||e.target.matches('div.del'))){
          e.preventDefault();
          console.log('over')
      }
  }
+ function dragLeave(e){
+    if(e.target&&(e.target.matches('.far')||e.target.matches('div.del'))){
+        console.log('leave');
+        del.classList.remove('del-enter')
+    }
+ }
  //drop
  function dropElement (e) {
-     if(e.target&&e.target.matches('.far')){
+     if(e.target&&(e.target.matches('.far')||e.target.matches('div.del'))){
          e.preventDefault();
          console.log('drop');
          const data = e.dataTransfer.getData("Text");
@@ -146,4 +151,5 @@ function addItems(e) {
  document.addEventListener('dragend', dragEnd);
  document.addEventListener('dragenter', dragEnter);
  document.addEventListener('dragover', dragOver);
+ document.addEventListener('dragleave', dragLeave);
  document.addEventListener('drop', dropElement);
