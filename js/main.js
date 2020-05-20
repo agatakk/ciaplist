@@ -18,7 +18,6 @@ function removeAlertItems(){
 }
 function addItems(e) {
     e.preventDefault();
-    
     if(input.value.trim()!=""&&quantity.value.trim()!=""){
         // deleting alerts on input
         input.classList.remove('input-alert');
@@ -61,6 +60,7 @@ function addItems(e) {
         //removing alert items
         removeAlertItems()
     }else{
+        // e.preventDefault();
         alertItem = document.createElement('p');
         alertItem.className = 'alert';
         //NO ITEM
@@ -109,20 +109,22 @@ function addItems(e) {
      }
  }
  function dragEnter (e) {
-     if(e.target&&e.target.className==='del'){
+     if(e.target&&e.target.nodeName==='I'){
          console.log('enter');
-         e.target.classList.add('del-enter');
+         const divDel = document.querySelector('.del');
+         divDel.classList.add('del-enter')
+        //  e.target.classList.add('del-enter');
      }
  }
  function dragOver (e) {
-     if(e.target&&e.target.matches('div.del')){
+     if(e.target&&e.target.matches('.far')){
          e.preventDefault();
          console.log('over')
      }
  }
  //drop
  function dropElement (e) {
-     if(e.target&&e.target.matches('div.del')){
+     if(e.target&&e.target.matches('.far')){
          e.preventDefault();
          console.log('drop');
          const data = e.dataTransfer.getData("Text");
@@ -131,13 +133,13 @@ function addItems(e) {
          del.className = 'none';
      }
  };
- // const label = document.querySelectorAll('li>label');
- // console.log(label);
- // label.forEach((item)=>{
- //     const listItems = document.querySelector(`li[data-key="${item.htmlFor}"]`);
- //     console.log(listItems);    
- //     
- // });
+//  const checkBoxes = document.querySelectorAll('li>input');
+//  console.log(checkBoxes);
+//  checkBoxes.forEach((item)=>{
+//      const listItems = document.querySelector(`li[data-key="${item.htmlFor}"]`);
+//      console.log(listItems);    
+     
+//  });
 
  //listiners for drag-drop
  document.addEventListener('dragstart', dragStart);
