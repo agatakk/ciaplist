@@ -115,6 +115,7 @@ function addItems(e) {
         //removing alert items
         removeAlertItems()
     }else{
+        e.preventDefault();
         alertItem = document.createElement('p');
         alertItem.className = 'alert';
         //NO ITEM
