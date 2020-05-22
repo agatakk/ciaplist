@@ -37,11 +37,11 @@
         <ul class="form__list-items"> 
             {% for item in items %}
             {% if item.tick == False %}
-            <li class="form__list-item" draggable="true" data-key="{{ item.item_name }}"><input type="checkbox" name="ticker" value="{{ item.id }}" id="{{ item.id }}">
+            <li class="form__list-item" draggable="true" data-key="{{ item.item_name }}" id="{{ item.item_li_id }}"><input type="checkbox" name="ticker" value="{{ item.id }}" id="{{ item.id }}">
                 <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label>
             </li>
             {% else %}
-            <li class="form__list-item" draggable="true" data-key="{{ item.item_name }}"><input type="checkbox" checked name="ticker" value="{{ item.id }}" id="{{ item.id }}">
+            <li class="form__list-item" draggable="true" data-key="{{ item.item_name }}" id="{{ item.item_li_id }}"><input type="checkbox" checked name="ticker" value="{{ item.id }}" id="{{ item.id }}">
                 <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label>
             </li>
             {% endif %}

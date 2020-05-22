@@ -23,4 +23,8 @@ class ListItem(models.Model):
 
     def __str__(self):
         return self.item_name
+
+    def item_li_id(self):
+        item_li_id = 'item_id_'+str(self.id)
+        return item_li_id
     

@@ -30,11 +30,11 @@ function addItems(e) {
         // li.id = listItem;
         // li.draggable = 'true';
         // li.className = 'form__list-item';
-        // // creating input type=checkbox
+        // creating input type=checkbox
         // const checkBox = document.createElement('input');
         // checkBox.type = 'checkbox';
         // checkBox.id = listItem;
-        // //creating label for input type=checkbox
+        //creating label for input type=checkbox
         // const checkBoxLabel = document.createElement('label');
         // checkBoxLabel.htmlFor = listItem;
         // li.dataset.key = checkBoxLabel.htmlFor;
@@ -79,7 +79,7 @@ function addItems(e) {
         //drop
         function dropElement (e) {
             if(e.target&&e.target.matches('div.del')){
-                // e.preventDefault();
+                e.preventDefault();
                 console.log('drop');
                 const data = e.dataTransfer.getData("Text");
                 const element = document.getElementById(data);
