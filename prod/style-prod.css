@@ -11,7 +11,7 @@ body{
     min-height: 100%;
     background-color:#E6DCDE;
     font-family: 'Lato', sans-serif;
-    background-image: url("vegetable.74b8bc9e8c5e.png");
+    background-image: url('../img/vegetable.png');
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
@@ -122,7 +122,7 @@ body{
  /* list styles */
  .form__list-items{
    list-style:none;
-   margin-bottom: 5rem;
+   margin: 2rem 0;
    /* border: 1px solid #F2A2B1; */
    padding-inline-start: 0;
  }
@@ -206,22 +206,26 @@ body{
     left: calc(50vw - 35px);
     border-radius:50%;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 170px;
-    height: 170px;
+    width: 100px;
+    height: 100px;
     margin:0 auto;
     text-align: center;
     color: #F2A007;
-    font-weight: 300;
-    font-size: 2.5rem;
-    line-height: 1.2rem;
-    line-height: 1.2;
+    font-weight: 200;
+    font-size: 4rem;
+    line-height: 1.25;
     padding:.5rem;
 }
 
 .del-enter{
-   border: 1px solid #5c8d2a;
+   border: 1px dotted #F2A007;
+   transform: scale(1.1);
 }
 .none{
     display:none;
+}
+
+i{
+    height: 70px
 }
 

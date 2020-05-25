@@ -2,5 +2,5 @@
     font-family: 'Rage Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Rage Italic'), url("RAGE_1.f9d696defbde.woff") format('woff');
+    src: local('Rage Italic'), url('http://ciaplist.heroku.app/RAGE_1.woff') format('woff');
 }
