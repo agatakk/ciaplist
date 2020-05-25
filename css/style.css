@@ -218,14 +218,14 @@ body{
 }
 
 .del-enter{
-   border: 1px dotted #F2A007;
    transform: scale(1.1);
+   opacity: .8;
 }
 .none{
     display:none;
 }
 
 i{
-    height: 70px
+    height: 65px
 }
 

@@ -215,11 +215,13 @@ body{
     font-size: 4rem;
     line-height: 1.25;
     padding:.5rem;
+    opacity:.6;
 }
 
 .del-enter{
-   border: 1px dotted #F2A007;
-   transform: scale(1.1);
+   /* border: 1px dotted #F2A007; */
+   /* transform: scale(1.1); */
+   opacity: 1;
 }
 .none{
     display:none;

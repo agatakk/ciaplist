@@ -91,6 +91,7 @@ function addItems(e) {
 //-------------------------------------
  //dragdrop
  const del = document.querySelector('#del');
+ const trash = document.querySelector('.trash');
  function dragStart (e) {
      if(e.target&&e.target.nodeName == "LI"){
          console.log('start');
@@ -109,22 +110,24 @@ function addItems(e) {
      }
  }
  function dragEnter (e) {
-     if(e.target&&(e.target.nodeName==='I'||e.target.className==='del')){
+     if(e.target&&(e.target.matches('i.far')||e.target.className==='del')){
          console.log('enter');
-         del.classList.add('del-enter')
+        del.classList.add('del-enter');
+        trash.classList.add('del-enter');
         //  e.target.classList.add('del-enter');
      }
  }
  function dragOver (e) {
-     if(e.target&&(e.target.matches('.far')||e.target.matches('div.del'))){
+     if(e.target&&(e.target.matches('i.far')||e.target.matches('div.del'))){
          e.preventDefault();
          console.log('over')
      }
  }
  function dragLeave(e){
-    if(e.target&&(e.target.matches('.far')||e.target.matches('div.del'))){
+    if(e.target&&e.target.matches('i.far')){
         console.log('leave');
-        del.classList.remove('del-enter')
+        del.classList.remove('del-enter');
+        trash.classList.remove('del-enter');
     }
  }
  //drop
