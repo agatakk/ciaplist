@@ -141,13 +141,7 @@ function addItems(e) {
          del.className = 'none';
      }
  };
-//  const checkBoxes = document.querySelectorAll('li>input');
-//  console.log(checkBoxes);
-//  checkBoxes.forEach((item)=>{
-//      const listItems = document.querySelector(`li[data-key="${item.htmlFor}"]`);
-//      console.log(listItems);    
-     
-//  });
+
 
  //listiners for drag-drop
  document.addEventListener('dragstart', dragStart);
@@ -156,3 +150,33 @@ function addItems(e) {
  document.addEventListener('dragover', dragOver);
  document.addEventListener('dragleave', dragLeave);
  document.addEventListener('drop', dropElement);
+
+ //changing a whole <li> tag when its checkbox is chekcked
+
+ function checkedItem(e){
+     if(e.target&&(e.target.nodeName=='INPUT'||e.target.nodeName=='LABEL')){
+         const listItem = document.querySelector(`li[data-key="${e.target.id}"]`);
+         if(e.target.checked){
+             listItem.classList.add('li-checked')
+         }else{
+            listItem.classList.remove('li-checked')
+         }
+        //  console.log(e.target.htmlFor);
+        //  console.log(listItem)
+        //  console.log(e)
+     }
+    // if(e.target.checked){
+    //     console.log('działa')
+        
+    // }else{
+    //     console.log('nie działa')
+    // }
+//     const checkBoxes = document.querySelectorAll('li>input');
+//     checkBoxes.forEach((item)=>{
+//      console.log(listItems);    
+     
+//  });
+}
+
+
+ window.addEventListener('change', checkedItem);

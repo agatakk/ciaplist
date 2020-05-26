@@ -144,6 +144,8 @@ body{
  /* items when checked styless */
  label{
      color: #593528;
+     width: 100%;
+     height: 100%;
  }
 
  input[type="checkbox" i]{
