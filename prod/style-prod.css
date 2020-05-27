@@ -207,17 +207,17 @@ body{
     bottom: 16vh;
     left: calc(50vw - 35px);
     border-radius:50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100px;
-    height: 100px;
+    background-color: rgba(94,72,64); ;
+    width: 70px;
+    height: 70px;
     margin:0 auto;
     text-align: center;
     color: #F2A007;
     font-weight: 200;
     font-size: 4rem;
-    line-height: 1.25;
+    line-height: .7;
     padding:.5rem;
-    opacity:.6;
+    opacity:.4;
 }
 
 .del-enter{
@@ -227,9 +227,5 @@ body{
 }
 .none{
     display:none;
-}
-
-i{
-    height: 70px
 }
 
