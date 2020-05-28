@@ -93,6 +93,7 @@ function addItems(e) {
  const del = document.querySelector('#del');
  const trash = document.querySelector('.trash');
  function dragStart (e) {
+    
      if(e.target&&e.target.nodeName == "LI"){
          console.log('start');
          del.className = "del";

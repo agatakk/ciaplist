@@ -138,6 +138,10 @@ body{
      align-items: center;
      font-size: 1rem;
      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+     transition: all .3s
+ }
+ .form__list-item:hover{
+     transform: scale(1.03);
  }
 
 
@@ -217,12 +221,12 @@ body{
     font-size: 4rem;
     line-height: .7;
     padding:.5rem;
-    opacity:.4;
+    opacity:.6;
 }
 
 .del-enter{
    /* border: 1px dotted #F2A007; */
-   /* transform: scale(1.1); */
+   transform: scale(1.05);
    opacity: 1;
 }
 .none{
