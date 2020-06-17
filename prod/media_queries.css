@@ -1,6 +1,6 @@
 @media screen 
-  and (max-width: 360px) 
-  and (max-height: 730px)  {
+  and (max-width: 361px) 
+  and (max-height: 731px)  {
       /* buttons */
       .btn{
           height: 32px;
@@ -31,4 +31,17 @@
        .footer__icon-atribution {
         font-size: .3rem;
        }
+
+       /* login screen */
+
+    .login-sec{
+           width: 78vw;
+       }
+
+    .login-sec__input{
+        width: 80%;
+    }
+    .login-sec__btn{
+        width: 45%;
+    }
 }

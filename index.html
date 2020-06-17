@@ -7,14 +7,25 @@
     <script src="https://kit.fontawesome.com/3881f6afec.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/d0c684794f.js"></script>
     <link rel="stylesheet" href="prod/style-prod.css">
-    <link rel="stylesheet" href="prod/media_queries-prod.css">
+    <link rel="stylesheet" href="prod/media_queries.css">
     <link rel="stylesheet" href="prod/font-rage-prod.css">
     <title>CiapList</title>
 </head>
 <body>
     <nav class="navbar">
         <h1 class="navbar__title">Ciaplist</h1>
-        <button class="navbar__login-button btn">Zaloguj</button>
+        <ul class="navbar__list">
+            <li class="navbar__btn navbar__btn--sync">
+                <button class="btn btn--sync">
+                    <i><img src="prod/mobile-sync.png" alt="synchronization icon"></i>
+                </button>
+            </li>
+            <li class="navbar__btn navbar__btn--logout">
+                <button class="btn">Wyloguj</button>
+            </li>
+        </ul>
+        
+       
     </nav>
     <section class="forms">
         <form action="" class="form">
