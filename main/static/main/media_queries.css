@@ -1,9 +1,18 @@
 @media screen 
   and (max-width: 360px) 
   and (max-height: 730px)  {
+      /* body image */
+      body{
+        background-image: url('vegetable.png');
+      }
       /* buttons */
       .btn{
-          height: 32px;
+          height: 40px;
+      }
+
+      .btn--logout, .btn--sync{
+          width: 65px;
+          height: 35px;
       }
       /* navbar - title and button */
       .navbar__login-button{
@@ -12,7 +21,8 @@
      }
     
      .navbar__title{
-         margin-left: 35px;
+         margin-left: 20px;
+         font-size: 1.6rem;
          
      }
     /* input */
@@ -21,7 +31,7 @@
     }
 
     .form__item-input{
-        width: 60%;
+        width: 80%;
      }
     
      .form__item-quantity{
@@ -31,4 +41,17 @@
        .footer__icon-atribution {
         font-size: .3rem;
        }
+
+       /* login screen */
+
+    .login-sec{
+           width: 78vw;
+       }
+
+    .login-sec__input{
+        width: 80%;
+    }
+    .login-sec__btn{
+        width: 45%;
+    }
 }

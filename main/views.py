@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
 from .models import ListItem
@@ -7,7 +7,7 @@ from .forms import Item_input_form
 
 
 # Create your views here.
-
+@login_required
 def main(request):
     if request.method == "POST":
         form = Item_input_form(request.POST)

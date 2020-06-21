@@ -24,7 +24,11 @@ urlpatterns = [
     path('nie-admin/', admin.site.urls),
     path('', views.main, name='main'),
     path('remove_item/<int:item_id>/', views.remove_item, name='remove_item'),
-    path('sync_list/', views.sync_list, name='sync_list')
+    path('sync_list/', views.sync_list, name='sync_list'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('login', auth_views.LoginView.as_view(success_url = '/'), name='login'),
+    path('logout', auth_views.LogoutView.as_view(), name='logout'),
+    path('change-password/', auth_views.PasswordChangeView.as_view(template_name='registration/password_change.html', success_url = '/'), name='change_password'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

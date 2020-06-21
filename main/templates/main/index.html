@@ -15,8 +15,17 @@
 <body>
     <nav class="navbar">
         <h1 class="navbar__title">Ciaplist</h1>
-        <button class="navbar__login-button btn">Zaloguj</button>
-    </nav>
+        <ul class="navbar__list">
+            <li class="navbar__btn navbar__btn--sync">
+                <button type="submit" form="itemlist" class="btn btn--sync">
+                    <i><img src="{% static 'main/mobile-sync.png' %}" alt="sync"></i>
+                </button>
+            </li>
+            <li class="navbar__btn navbar__btn--logout">
+                <a class="btn btn--logout" href="{% url 'logout' %}?next=/"> <i><img src="{% static 'main/XMLID_2_.png' %}" alt="wydup"></i></a>
+            </li>
+        </ul>     
+        </nav>
     <section class="forms">
     <form action="{% url 'main' %}" method="post" class="form" enctype="multipart/form-data">
         <div class="form__input-container">
@@ -33,7 +42,7 @@
     </form>
         <form class="form" action="{% url 'sync_list' %}" method="post" id="itemlist">
             {% csrf_token %}
-        <button type="submit" form="itemlist" class="btn">Sync</button>
+        
         <ul class="form__list-items"> 
             {% for item in items %}
             {% if item.tick == False %}
@@ -52,7 +61,7 @@
 
         </section>
         <div class="none" id="del">
-            <i class="far fa-trash-alt"></i>
+            <img class='trash' src="{% static 'main/trash-can.png' %}" alt="trash-icon">
         </div>
         <footer class="footer">
             <p class="footer__info">&copy 2020 Ciampin Interactive</p>
