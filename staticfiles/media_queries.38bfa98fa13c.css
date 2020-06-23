@@ -1,0 +1,57 @@
+@media screen 
+  and (max-width: 360px) 
+  and (max-height: 730px)  {
+      /* body image */
+      body{
+        background-image: url("vegetable.74b8bc9e8c5e.png");
+      }
+      /* buttons */
+      .btn{
+          height: 40px;
+      }
+
+      .btn--logout, .btn--sync{
+          width: 65px;
+          height: 35px;
+      }
+      /* navbar - title and button */
+      .navbar__login-button{
+        margin-right: 35px;
+        line-height: 0;
+     }
+    
+     .navbar__title{
+         margin-left: 20px;
+         font-size: 1.6rem;
+         
+     }
+    /* input */
+    .form__item-input, .form__item-quantity{
+        margin: 10px 5px;
+    }
+
+    .form__item-input{
+        width: 80%;
+     }
+    
+     .form__item-quantity{
+        width: 25%;
+     }
+       /* atrribution */
+       .footer__icon-atribution {
+        font-size: .3rem;
+       }
+
+       /* login screen */
+
+    .login-sec{
+           width: 78vw;
+       }
+
+    .login-sec__input{
+        width: 80%;
+    }
+    .login-sec__btn{
+        width: 45%;
+    }
+}
