@@ -60,6 +60,10 @@ body{
     background:#F2DEC4;
     line-height: 1;
 }
+.btn--logout{
+    display:inline-block;
+    line-height: 3.2;
+}
 
 /* navbar styles */
 .navbar{
@@ -137,7 +141,7 @@ body{
  /* list styles */
  .form__list-items{
    list-style:none;
-   margin: 2rem 0;
+   margin: 15vh 0;
    /* border: 1px solid #F2A2B1; */
    padding-inline-start: 0;
  }
@@ -285,19 +289,40 @@ body{
 }
 
 .login-sec__btn{
-    background-color: #5c8d2a;
-    border: 1px solid #5c8d2a;
+    background:linear-gradient(#5C8D2A, #466C20);
+    border: 1px solid rgba(92, 141, 42, 0);
     height: 8%;
     width: 26%;
     font-family:'Lato';
     color:#F2DEC4;
     font-size: 1rem;
     margin: 20px auto;
-    box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 6px rgb(1,1,1, 0.3);
     transition: all .2s;
 }
 .login-sec__btn:active{
-    box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.3);
     outline: 0;
+}
+
+.login-sec__btn:hover{
+    /* background-color: #F2DEC4;
+    border-color: #F2DEC4;
+    color: #5c8d2a; */
+    box-shadow: 3px 3px 20px rgb(1, 1, 1, 0.3);
+}
+
+.login-sec_password-forgotten{
+    color:#F2A007;
+    transition: all .5s;
+}
+
+.login-sec_password-forgotten:hover{
+    color:#F2A007;
+    transform: scale(1.03);
+}
+
+.login-sec__info{
+    color:#F2A007;
+    font-size: 1.5rem;
 }
 

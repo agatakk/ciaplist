@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://kit.fontawesome.com/3881f6afec.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/d0c684794f.js"></script>
+    <!-- <link rel="stylesheet" href="/static/main/style.62372ac75294.css">
+    <link rel="stylesheet" href="/static/main/media_queries.b4449af1d691.css">
+    <link rel="stylesheet" href="/static/main/font-rage.cbe1773b2e75.css"> -->
+    <link rel="stylesheet" href="style-prod.css">
+    <link rel="stylesheet" href="media_queries.css">
+    <link rel="stylesheet" href="font-rage-prod.css">
+    <title>CiapList</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="navbar__title">Ciaplist</h1>
+        <ul class="navbar__list">
+            <li class="navbar__btn navbar__btn--sync">
+                <button type="submit" class="btn btn--sync">
+                    <i><img src="mobile-sync.png" alt="synchronization icon"></i>
+                </button>
+            </li>
+            <li class="navbar__btn navbar__btn--logout">
+                <button class="btn btn--logout"> <i><img src="XMLID_2_.png" alt="synchronization icon"></i></button>
+            </li>
+        </ul>       
+    </nav>
+    <section class="forms">
+    <form action="/" method="post" class="form" enctype="multipart/form-data">
+        <div class="form__input-container">
+            <input type="hidden" name="csrfmiddlewaretoken" value="thInDS4O0fHeSoNDAqxsAmALqaFdMBi6BbyQOSe25cqJ8N5PTKAfIXavo3t9lgLy">
+            <label for="id_item_name"></label> 
+            <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name" placeholder="Co?">
+            <label for="id_quantity"></label>
+            <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity" placeholder="Ile?">
+            <button type="submit" class="form__submit-btn btn">Dodaj</button>
+        </div>
+        <div class="form__alert-messages-container">
+
+        </div>
+    </form>
+        <form class="form" action="/sync_list/" method="post" id="itemlist">
+            <input type="hidden" name="csrfmiddlewaretoken" value="thInDS4O0fHeSoNDAqxsAmALqaFdMBi6BbyQOSe25cqJ8N5PTKAfIXavo3t9lgLy">
+        <!-- <button type="submit" form="itemlist" class="btn">Sync</button> -->
+        <ul class="form__list-items"> 
+            
+            
+            <li class="form__list-item" draggable="true" data-key="" id="item_id_136"><input type="checkbox" name="ticker" value="136" id="136">
+                <label for=""> []</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="" id="item_id_135"><input type="checkbox" name="ticker" value="135" id="135">
+                <label for=""> []</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Doniczka / osłonka średnica 16-17cm" id="item_id_114"><input type="checkbox" name="ticker" value="114" id="114">
+                <label for="Doniczka / osłonka średnica 16-17cm">Doniczka / osłonka średnica 16-17cm [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="rozmaryn" id="item_id_133"><input type="checkbox" checked name="ticker" value="133" id="133">
+                <label for="rozmaryn">rozmaryn []</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="passata pomidorowa" id="item_id_129"><input type="checkbox" checked name="ticker" value="129" id="129">
+                <label for="passata pomidorowa">passata pomidorowa [1op]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="cebula biała" id="item_id_128"><input type="checkbox" checked name="ticker" value="128" id="128">
+                <label for="cebula biała">cebula biała [2]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="masło" id="item_id_127"><input type="checkbox" checked name="ticker" value="127" id="127">
+                <label for="masło">masło [2]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="pomidory krojone w sosie własnym" id="item_id_126"><input type="checkbox" checked name="ticker" value="126" id="126">
+                <label for="pomidory krojone w sosie własnym">pomidory krojone w sosie własnym [4 paczki]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="mozarella w kostce (do starcia na tarce)" id="item_id_125"><input type="checkbox" checked name="ticker" value="125" id="125">
+                <label for="mozarella w kostce (do starcia na tarce)">mozarella w kostce (do starcia na tarce) [1kostka]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="makaron świderki" id="item_id_124"><input type="checkbox" checked name="ticker" value="124" id="124">
+                <label for="makaron świderki">makaron świderki [1op]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="makaron canelloni" id="item_id_123"><input type="checkbox" checked name="ticker" value="123" id="123">
+                <label for="makaron canelloni">makaron canelloni [1op]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="makaron canelloni" id="item_id_122"><input type="checkbox" checked name="ticker" value="122" id="122">
+                <label for="makaron canelloni">makaron canelloni [1op]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="jogurt grecki" id="item_id_121"><input type="checkbox" checked name="ticker" value="121" id="121">
+                <label for="jogurt grecki">jogurt grecki [400g]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="jajka" id="item_id_120"><input type="checkbox" checked name="ticker" value="120" id="120">
+                <label for="jajka">jajka [10szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Dżemik" id="item_id_119"><input type="checkbox" checked name="ticker" value="119" id="119">
+                <label for="Dżemik">Dżemik [2]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Worki do mrożenia mięsa" id="item_id_113"><input type="checkbox" checked name="ticker" value="113" id="113">
+                <label for="Worki do mrożenia mięsa">Worki do mrożenia mięsa [800g]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Porcja rosołowa (golonka z indyka)" id="item_id_112"><input type="checkbox" checked name="ticker" value="112" id="112">
+                <label for="Porcja rosołowa (golonka z indyka)">Porcja rosołowa (golonka z indyka) [800g]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Por" id="item_id_111"><input type="checkbox" checked name="ticker" value="111" id="111">
+                <label for="Por">Por [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Seler" id="item_id_110"><input type="checkbox" checked name="ticker" value="110" id="110">
+                <label for="Seler">Seler [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Pietruszka korzeń" id="item_id_108"><input type="checkbox" checked name="ticker" value="108" id="108">
+                <label for="Pietruszka korzeń">Pietruszka korzeń [4szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Marchew 🥕" id="item_id_107"><input type="checkbox" checked name="ticker" value="107" id="107">
+                <label for="Marchew 🥕">Marchew 🥕 [1kg]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Ogórki kiszone z beczki" id="item_id_106"><input type="checkbox" checked name="ticker" value="106" id="106">
+                <label for="Ogórki kiszone z beczki">Ogórki kiszone z beczki [5szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Śmietana 18%" id="item_id_105"><input type="checkbox" checked name="ticker" value="105" id="105">
+                <label for="Śmietana 18%">Śmietana 18% [1 mikro]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Browaria" id="item_id_104"><input type="checkbox" checked name="ticker" value="104" id="104">
+                <label for="Browaria">Browaria [2 WIT 1 standard]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="(młode) ziemniaki" id="item_id_103"><input type="checkbox" checked name="ticker" value="103" id="103">
+                <label for="(młode) ziemniaki">(młode) ziemniaki [2kg]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Brokuł 🥦" id="item_id_102"><input type="checkbox" checked name="ticker" value="102" id="102">
+                <label for="Brokuł 🥦">Brokuł 🥦 [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Makaron literki / miniony" id="item_id_101"><input type="checkbox" checked name="ticker" value="101" id="101">
+                <label for="Makaron literki / miniony">Makaron literki / miniony [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Penne" id="item_id_100"><input type="checkbox" checked name="ticker" value="100" id="100">
+                <label for="Penne">Penne [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Almette chrzanowy" id="item_id_99"><input type="checkbox" checked name="ticker" value="99" id="99">
+                <label for="Almette chrzanowy">Almette chrzanowy [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Almette śmietankowy" id="item_id_98"><input type="checkbox" checked name="ticker" value="98" id="98">
+                <label for="Almette śmietankowy">Almette śmietankowy [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Pomidory malinowe" id="item_id_97"><input type="checkbox" checked name="ticker" value="97" id="97">
+                <label for="Pomidory malinowe">Pomidory malinowe [3-4szt]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Herbatniki" id="item_id_96"><input type="checkbox" checked name="ticker" value="96" id="96">
+                <label for="Herbatniki">Herbatniki [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Oliwki czarne" id="item_id_95"><input type="checkbox" checked name="ticker" value="95" id="95">
+                <label for="Oliwki czarne">Oliwki czarne [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Kapary" id="item_id_94"><input type="checkbox" checked name="ticker" value="94" id="94">
+                <label for="Kapary">Kapary [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Jogurt naturalny" id="item_id_93"><input type="checkbox" checked name="ticker" value="93" id="93">
+                <label for="Jogurt naturalny">Jogurt naturalny [2]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Groszek malutki" id="item_id_92"><input type="checkbox" checked name="ticker" value="92" id="92">
+                <label for="Groszek malutki">Groszek malutki [2]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Kukurydzki" id="item_id_91"><input type="checkbox" checked name="ticker" value="91" id="91">
+                <label for="Kukurydzki">Kukurydzki [2]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Tuńczyk" id="item_id_90"><input type="checkbox" checked name="ticker" value="90" id="Tuńczyk">
+                <label for="Tuńczyk">Tuńczyk [3]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="tabletki do zmywarki" id="item_id_89"><input type="checkbox" checked name="ticker" value="89" id="tabletki do zmywarki">
+                <label for="tabletki do zmywarki">Tabletki do zmywarki [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="Płyn pod prysznic" id="item_id_88"><input type="checkbox" checked name="ticker" value="88" id="88">
+                <label for="Płyn pod prysznic">Płyn pod prysznic [1]</label>
+            </li>
+            
+            
+            
+            <li class="form__list-item" draggable="true" data-key="rzodkiewka" id="item_id_83"><input type="checkbox" checked name="ticker" value="83" id="83">
+                <label for="rzodkiewka">rzodkiewka [1 pęczek]</label>
+            </li>
+            
+                   
+                
+                </ul>
+            </form>
+
+        </section>
+        <div class="none" id="del">
+            <!-- <i class="far fa-trash-alt trash"></i> -->
+            <img class='trash' src="trash-can.png" alt="trash-icon">
+        </div>
+        <footer class="footer">
+            <p class="footer__info">&copy 2020 Ciampin Interactive</p>
+            <div class='footer__icon-atribution'>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </footer>
+    <script src="main-prod.js"></script>
+</body>
+</html>
