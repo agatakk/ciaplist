@@ -317,3 +317,8 @@ body{
     transform: scale(1.03);
 }
 
+.login-sec__info{
+    color:#F2A007;
+    font-size: 1.5rem;
+}
+
