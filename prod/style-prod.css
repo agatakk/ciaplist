@@ -100,18 +100,20 @@ body{
      padding: 70px 0 0 0;
  }
  .form{
-     flex-direction: row;
+     flex-direction: column;
+     padding-top: 12vh;
  }
  .form-list{
-     padding: 0 0 15vh 0;
+     padding: 2vh 1vh 20vh 1vh;
  }
 .form__input-container{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items:center;
+    align-items:center; */
+    text-align: center;
     width: 100%;
-    padding: 2rem;
+    padding: .5rem;
 }
 /* input what and how many styles */
  .form__item-input, .form__item-quantity{
@@ -125,13 +127,16 @@ body{
 
  .form__item-input{
     width: 40%;
+    display: inline-block;
  }
 
  .form__item-quantity{
     width: 10%;
+    display: inline-block;
  }
  .form__submit-btn{
-    margin: 20px;
+    display:block;
+    margin: 0 auto;
  }
 
  /* list styles */

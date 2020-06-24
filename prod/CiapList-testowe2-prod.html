@@ -16,6 +16,7 @@
     <title>CiapList</title>
 </head>
 <body>
+        <!-- navbar -->
     <nav class="navbar">
         <h1 class="navbar__title">Ciaplist</h1>
         <ul class="navbar__list">
@@ -29,6 +30,8 @@
             </li>
         </ul>       
     </nav>
+    <!-- forms -->
+        <!-- forms with input-->
     <section class="forms">
     <form action="/" method="post" class="form" enctype="multipart/form-data">
         <div class="form__input-container">
@@ -37,13 +40,14 @@
             <input type="text" name="item_name" class="form__item-input" maxlength="100" id="id_item_name" placeholder="Co?">
             <label for="id_quantity"></label>
             <input type="text" name="quantity" class="form__item-quantity" maxlength="50" id="id_quantity" placeholder="Ile?">
-            <button type="submit" class="form__submit-btn btn">Dodaj</button>
         </div>
+        <button type="submit" class="form__submit-btn btn">Dodaj</button>
         <div class="form__alert-messages-container">
 
         </div>
     </form>
-        <form class="form" action="/sync_list/" method="post" id="itemlist">
+    <!-- forms with list items -->
+        <form class="form form-list" action="/sync_list/" method="post" id="itemlist">
             <input type="hidden" name="csrfmiddlewaretoken" value="thInDS4O0fHeSoNDAqxsAmALqaFdMBi6BbyQOSe25cqJ8N5PTKAfIXavo3t9lgLy">
         <!-- <button type="submit" form="itemlist" class="btn">Sync</button> -->
         <ul class="form__list-items"> 
