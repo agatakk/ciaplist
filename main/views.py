@@ -16,7 +16,7 @@ def main(request):
             return redirect(main)
         
     else:
-        listed_items = ListItem.objects.order_by('tick', '-id')
+        listed_items = ListItem.objects.filter(list_owner=request.user).order_by('tick', '-id')
         return render(request, 'main/index.html', {'items':listed_items})
 
 
