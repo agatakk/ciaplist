@@ -54,4 +54,13 @@
     .login-sec__btn{
         width: 45%;
     }
+    .login-sec__info{
+        font-size: 1rem;
+        padding: 0 .3rem;
+        text-align: center;
+    }
+    .login-sec__btn {
+        width: 53%;
+        font-size: .9rem;
+    }
 }
