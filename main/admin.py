@@ -4,8 +4,8 @@ from main.models import ListItem, ShoppingList
 
 
 class ListItemAdmin(admin.ModelAdmin):
-    list_display = ('item_name', 'quantity', 'tick')
-    list_filter = ('tick',)
+    list_display = ('item_name', 'quantity', 'tick', 'shopping_list')
+    list_filter = ('tick', 'shopping_list')
 admin.site.register(ListItem, ListItemAdmin)
 
 class ShoppingListAdmin(admin.ModelAdmin):

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
-from .models import ListItem
+from .models import ListItem, ShoppingList
 from .forms import Item_input_form
 
 
@@ -11,12 +11,17 @@ from .forms import Item_input_form
 def main(request):
     if request.method == "POST":
         form = Item_input_form(request.POST)
+        target_list = ShoppingList.objects.get(list_owner = request.user)
         if form.is_valid():
-            form.save()
+            list_in_process = form.save(commit=False)
+            list_in_process.shopping_list = target_list
+            list_in_process.save()
             return redirect(main)
         
     else:
-        listed_items = ListItem.objects.filter(list_owner=request.user).order_by('tick', '-id')
+        req_list = ShoppingList.objects.get(list_owner=request.user)
+        print(req_list)
+        listed_items = ListItem.objects.filter(shopping_list=req_list).order_by('tick', '-id')
         return render(request, 'main/index.html', {'items':listed_items})
 
 

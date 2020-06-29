@@ -17,35 +17,35 @@ function removeAlertItems(){
     }  
 }
 function addItems(e) {
-    e.preventDefault();
+    // e.preventDefault();
     if(input.value.trim()!=""&&quantity.value.trim()!=""){
         // deleting alerts on input
         input.classList.remove('input-alert');
         quantity.classList.remove('input-alert');
         // creating the <li> elements
-        let listItem = input.value;
-        let itemQuantity = quantity.value;
-        const li = document.createElement('li');
-        li.id = listItem;
-        li.draggable = 'true';
-        li.className = 'form__list-item';
-        // creating input type=checkbox
-        const checkBox = document.createElement('input');
-        checkBox.type = 'checkbox';
-        checkBox.id = listItem;
-        //creating label for input type=checkbox
-        const checkBoxLabel = document.createElement('label');
-        checkBoxLabel.htmlFor = listItem;
-        li.dataset.key = checkBoxLabel.htmlFor;
-        checkBoxLabel.textContent = `${listItem} [${itemQuantity}]`;
-        //appending elements to list
-        list.appendChild(li);
-        li.appendChild(checkBox);
-        li.appendChild(checkBoxLabel);
+        // let listItem = input.value;
+        // let itemQuantity = quantity.value;
+        // const li = document.createElement('li');
+        // li.id = listItem;
+        // li.draggable = 'true';
+        // li.className = 'form__list-item';
+        // // creating input type=checkbox
+        // const checkBox = document.createElement('input');
+        // checkBox.type = 'checkbox';
+        // checkBox.id = listItem;
+        // //creating label for input type=checkbox
+        // const checkBoxLabel = document.createElement('label');
+        // checkBoxLabel.htmlFor = listItem;
+        // li.dataset.key = checkBoxLabel.htmlFor;
+        // checkBoxLabel.textContent = `${listItem} [${itemQuantity}]`;
+        // //appending elements to list
+        // list.appendChild(li);
+        // li.appendChild(checkBox);
+        // li.appendChild(checkBoxLabel);
         
         
-        input.value='';
-        quantity.value = '';
+        // input.value='';
+        // quantity.value = '';
 
         // //styling of <li> :checked
         // checkBox.addEventListener('change', (e)=>{
