@@ -89,6 +89,23 @@ function addItems(e) {
 // LISTENERS for addItems funntion
  form.addEventListener('submit', addItems);
 //-------------------------------------
+
+//changing a whole <li> tag when its checkbox is chekcked
+
+function checkedItem(e){
+    if(e.target&&(e.target.nodeName=='INPUT'||e.target.nodeName=='LABEL')){
+        const listItem = document.querySelector(`li[data-key="${e.target.id}"]`);
+        if(e.target.checked&&listItem){
+            listItem.classList.add('li-checked')
+            console.log(listItem)
+        }else if(listItem){
+           console.log(listItem)
+           listItem.classList.remove('li-checked')
+        }
+    }
+}
+window.addEventListener('change', checkedItem);
+
  //dragdrop
  const del = document.querySelector('#del');
  const trash = document.querySelector('.trash');
@@ -152,32 +169,4 @@ function addItems(e) {
  document.addEventListener('dragleave', dragLeave);
  document.addEventListener('drop', dropElement);
 
- //changing a whole <li> tag when its checkbox is chekcked
-
- function checkedItem(e){
-     if(e.target&&(e.target.nodeName=='INPUT'||e.target.nodeName=='LABEL')){
-         const listItem = document.querySelector(`li[data-key="${e.target.id}"]`);
-         if(e.target.checked){
-             listItem.classList.add('li-checked')
-         }else{
-            listItem.classList.remove('li-checked')
-         }
-        //  console.log(e.target.htmlFor);
-        //  console.log(listItem)
-        //  console.log(e)
-     }
-    // if(e.target.checked){
-    //     console.log('działa')
-        
-    // }else{
-    //     console.log('nie działa')
-    // }
-//     const checkBoxes = document.querySelectorAll('li>input');
-//     checkBoxes.forEach((item)=>{
-//      console.log(listItems);    
-     
-//  });
-}
-
-
- window.addEventListener('change', checkedItem);
+ 
