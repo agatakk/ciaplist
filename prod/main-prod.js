@@ -93,8 +93,10 @@ function addItems(e) {
 //changing a whole <li> tag when its checkbox is chekcked
 
 function checkedItem(e){
+    console.log('działa')
     if(e.target&&(e.target.nodeName=='INPUT'||e.target.nodeName=='LABEL')){
         const listItem = document.querySelector(`li[data-key="${e.target.id}"]`);
+        console.log(e.target.id);
         if(e.target.checked&&listItem){
             listItem.classList.add('li-checked')
             console.log(listItem)
@@ -121,11 +123,15 @@ window.addEventListener('change', checkedItem);
  }
  function dragEnd(e){
      console.log('koniec')
-     if( e.target&&e.target.nodeName == "LI"){
+     if(e.target&&(e.target.nodeName == "LI"||e.target.nodeName=='INPUT'||e.target.nodeName=='LABEL')){
          del.className = "none";
          e.target.className = "form__list-item"; 
          console.log('end');
-     }
+         if(e.target&&e.target.firstChild.checked){
+             e.target.classList.add('li-checked');
+         }
+         
+      }
  }
  function dragEnter (e) {
      if(e.target&&(e.target.matches('img.trash')||e.target.className==='del')){
