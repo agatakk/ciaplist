@@ -3,6 +3,7 @@ const input = document.querySelector('.form__item-input');
 const quantity = document.querySelector('.form__item-quantity')
 const addBtn = document.querySelector('.form__submit-btn');
 const list = document.querySelector('.form__list-items');
+const listItems = document.querySelectorAll('li');
 const formContainer = document.querySelector('.form__alert-messages-container');
 const form = document.querySelector('.form');
 let alertItem;
@@ -174,5 +175,23 @@ window.addEventListener('change', checkedItem);
  document.addEventListener('dragover', dragOver);
  document.addEventListener('dragleave', dragLeave);
  document.addEventListener('drop', dropElement);
+
+
+ //-------------------------------------------
+ //SEARCH
+
+
+ const searchBar = function(e){
+    
+    const searchValue = e.target.value;
+    let items = [...listItems];
+    items = items.filter(item => item.childNodes[2].textContent.includes(searchValue));
+    console.log(items);
+
+   
+
+ }
+
+ input.addEventListener('input', searchBar);
 
  
