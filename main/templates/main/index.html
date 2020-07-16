@@ -48,12 +48,13 @@
             {% if item.tick == False %}
             <li class="form__list-item" draggable="true" data-key="{{ item.item_name }}" id="{{ item.item_li_id }}"><input type="checkbox" name="ticker" value="{{ item.id }}" id="{{ item.item_name }}">
                 <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label>
-            </li>
+            
             {% else %}
             <li class="form__list-item li-checked" draggable="true" data-key="{{ item.item_name }}" id="{{ item.item_li_id }}"><input type="checkbox" checked name="ticker" value="{{ item.id }}" id="{{ item.item_name }}">
                 <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label>
-            </li>
+            
             {% endif %}
+            <a href="{% url 'remove_item' item.id %}"> DEL</a></li>
             {% endfor %}       
                 
                 </ul>
