@@ -54,7 +54,7 @@
                 <label for="{{ item.item_name }}">{{ item.item_name }} [{{item.quantity}}]</label>
             
             {% endif %}
-            <a href="{% url 'remove_item' item.id %}"> DEL</a></li>
+            <a href="{% url 'remove_item' item.id %}">[USUŃ]</a></li>
             {% endfor %}       
                 
                 </ul>
