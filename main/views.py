@@ -21,7 +21,7 @@ def main(request):
     else:
         target_list = ShoppingList.objects.get(list_owner = request.user)
         listed_items = ListItem.objects.filter(shopping_list=target_list).order_by('tick', '-id')
-        return render(request, 'main/index.html', {'items':listed_items})
+        return render(request, 'main/index.html', {'items':listed_items, 'current_list':target_list})
 
 
 def remove_item(request, item_id):

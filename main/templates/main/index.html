@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
     <link rel="stylesheet" href="{% static 'main/media_queries.css' %}">
     <link rel="stylesheet" href="{% static 'main/font-rage.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172909393-1"></script>
 <script>
@@ -20,7 +21,7 @@
   gtag('config', 'UA-172909393-1');
 </script>
 
-    <title>CiapList</title>
+    <title>CiapList - {{ current_list }}</title>
 </head>
 <body>
     <nav class="navbar">
