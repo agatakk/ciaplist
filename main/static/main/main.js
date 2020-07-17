@@ -18,6 +18,21 @@ function removeAlertItems(){
 }
 function addItems(e) {
     // e.preventDefault();
+    let items = [...listItems];
+    // console.log(items);
+    items.forEach(item =>{
+            if(input.value === item.id){
+                alertItem = document.createElement('p');
+                alertItem.className = 'alert';
+                alertItem.textContent = 'Masz to już na liście';
+                input.classList.add('input-alert');
+                quantity.classList.add('input-alert');
+                console.log('masz to już');
+                console.log(alertItem);
+                console.log(formContainer);
+                formContainer.appendChild(alertItem);
+            };
+        });
     if(input.value.trim()!=""&&quantity.value.trim()!=""){
         // deleting alerts on input
         input.classList.remove('input-alert');
@@ -80,7 +95,7 @@ function addItems(e) {
             alertItem.textContent = 'No heloł, nic nie wpisałeś. WTF?';
             quantity.classList.add('input-alert');
             input.classList.add('input-alert');
-            removeAlertItems()
+            removeAlertItems();
         }      
         formContainer.appendChild(alertItem);
     }
