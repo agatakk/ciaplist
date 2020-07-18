@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://kit.fontawesome.com/3881f6afec.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/d0c684794f.js"></script>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/media_queries.css' %}">
+    <link rel="stylesheet" href="{% static 'main/font-rage.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172909393-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172909393-1');
+</script>
+{% if user.is_authenticated %}
+    <title>CiapList - {{ current_list }}</title>
+{% else %}
+    <title>CiapList</title>
+{% endif %}
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="navbar__title">Ciaplist</h1>
+        {% if user.is_authenticated %}
+        <ul class="navbar__list">
+            <li class="navbar__btn navbar__btn--sync">
+                <button type="submit" form="itemlist" class="btn btn--sync">
+                    <i><img src="{% static 'main/mobile-sync.png' %}" alt="sync"></i>
+                </button>
+            </li>
+            <li class="navbar__btn navbar__btn--logout">
+                <a class="btn btn--logout" href="{% url 'logout' %}?next=/"> <i><img src="{% static 'main/XMLID_2_.png' %}" alt="wydup"></i></a>
+            </li>
+        </ul>
+        {% else %} {% endif %}
+        </nav>
+        
+        
+        {% block content %}
+        {% endblock %}
+
+
+        <footer class="footer">
+            <p class="footer__info">&copy 2020 Akuko Studio</p>
+            <div class='footer__icon-atribution'>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </footer>
+    <script src="{% static 'main/main.js' %}"></script>
+</body>
+</html>
