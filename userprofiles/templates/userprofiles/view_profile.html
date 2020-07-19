@@ -5,8 +5,9 @@
 <ul class="form__list-items">
    <li>Nazwa użytkownika: <b>{{ request.user.username }}</b></li>
    <li>Adres e-mail: {{ request.user.email}}</li>
-   <li>Jesteś z nami od: {{ request.user.date_joined}} &#128151;</li>
    <li>Nazwa Twojej domyślnej listy: <span>{{ target_list }}</span></li>
+   <li>Jesteś z nami od <b>{{ request.user.date_joined|date }}</b> &#128151;</li>
+   <li>Hasło: LOL... nie możemy go pokazać. Ale możesz je <a href="{% url 'change_password' %}">zmienić.</a></li>
   </ul>
 </section>
 {% endblock %}
