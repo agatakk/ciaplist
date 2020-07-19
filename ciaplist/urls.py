@@ -28,6 +28,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('login', auth_views.LoginView.as_view(success_url = '/'), name='login'),
     path('logout', auth_views.LogoutView.as_view(), name='logout'),
+    path('profile/', include('userprofiles.urls')),
     path('change-password/', auth_views.PasswordChangeView.as_view(template_name='registration/password_change.html', success_url = '/'), name='change_password'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

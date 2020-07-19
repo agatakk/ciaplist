@@ -36,6 +36,7 @@ INTERNAL_IPS = [
 
 INSTALLED_APPS = [
     'main',
+    'userprofiles',
     'debug_toolbar',
     'django.contrib.admin',
     'django.contrib.auth',

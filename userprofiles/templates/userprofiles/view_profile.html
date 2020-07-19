@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<section class="forms">  
+<ul class="form__list-items">
+   <li>Nazwa użytkownika: <b>{{ request.user.username }}</b></li>
+   <li>Adres e-mail: {{ request.user.email}}</li>
+   <li>Jesteś z nami od: {{ request.user.date_joined}} &#128151;</li>
+   <li>Nazwa Twojej domyślnej listy: <span>{{ target_list }}</span></li>
+  </ul>
+</section>
+{% endblock %}
