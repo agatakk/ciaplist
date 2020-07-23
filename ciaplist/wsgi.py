@@ -10,6 +10,11 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+try:
+    import sqreen
+    sqreen.start()
+except ModuleNotFoundError:
+    pass
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ciaplist.settings')
 
