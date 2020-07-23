@@ -7,11 +7,9 @@ For more information on this file, see
 https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
-try:
-    import sqreen
-    sqreen.start()
-except ModuleNotFoundError:
-    pass
+import sqreen
+sqreen.start()
+
 
 import os
 
