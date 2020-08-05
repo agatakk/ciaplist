@@ -17,6 +17,9 @@ sqlparse = "==0.3.1"
 whitenoise = "*"
 django-debug-toolbar = "*"
 sqreen = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.7"
