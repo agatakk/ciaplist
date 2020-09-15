@@ -4,3 +4,9 @@ The project of a simple shopping list, in which any user logged in to a particul
 
 Technologies used in the project: HTML, CSS, JavaScript, Python(Django);
 authors: agatakk (design and frontend), cmaiek (backend);
+
+Live version has been uploaded to herokuapp.com
+
+At the moment we are at the process of learning how to build the list using API, so that it is more efficient.
+
+
